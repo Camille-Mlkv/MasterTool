@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterTool.UI.Pages.SignUpPage"
+             Title="SignUpPage">
+    <VerticalStackLayout>
+        <Label 
+        Text="Регистрация"
+        VerticalOptions="Start" 
+        HorizontalOptions="Center"
+        FontSize="20"/>
+        <VerticalStackLayout Spacing="10">
+            <Entry
+                x:Name="UsernameEntry"
+                Placeholder = "Имя пользователя" 
+                FontFamily="Helvetica"
+                FontSize="17"
+                MaxLength="25"
+                WidthRequest="250"
+                Text="{Binding UserModel.Username}"
+                TextChanged="OnUsernameChanged"/>
+            <Label x:Name="UsernameAvailabilityLabel" 
+                   Text="Пусто"
+                   HorizontalOptions="Center"/>
+            <Entry
+                x:Name="PasswordEntry"
+                Placeholder = "Пароль" 
+                FontFamily="Helvetica"
+                FontSize="17"
+                IsPassword="True"
+                MaxLength="25"
+                WidthRequest="250"
+                Text="{Binding UserModel.Password}"/>
+            <Entry
+                x:Name="NameEntry"
+                Placeholder="Имя"
+                FontFamily="Helvetica"
+                FontSize="17"
+                MaxLength="25"
+                WidthRequest="250"
+                Text="{Binding UserModel.Name}"/>
+            <Entry
+                x:Name="SurnameEntry"
+                Placeholder = "Фамилия" 
+                FontFamily="Helvetica"
+                FontSize="17"
+                MaxLength="25"
+                WidthRequest="250"
+                Text="{Binding UserModel.Surname}"/>
+            <Entry
+                x:Name="PhoneEntry"
+                Placeholder = "Phone number" 
+                FontFamily="Helvetica"
+                FontSize="17"
+                MaxLength="25"
+                WidthRequest="250"
+                Text="{Binding UserModel.PhoneNumber}"/>
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="Электронная почта"
+                FontFamily="Helvetica"
+                FontSize="17"
+                MaxLength="25"
+                WidthRequest="250"
+                Text="{Binding UserModel.Email}"/>
+            <Entry
+                x:Name="KeyEntry"
+                Placeholder="Ключ"
+                FontFamily="Helvetica"
+                FontSize="17"
+                MaxLength="25"
+                WidthRequest="250"
+                Text="{Binding IdentificationKey}"/>
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout HorizontalOptions="Center">
+            <RadioButton
+                x:Name="AdminRB"
+                Content="Зарегистрироваться как админ"
+                CheckedChanged="OnRBChecked"/>
+            <RadioButton
+                x:Name="MasterRB"
+                Content="Зарегистрироваться как мастер"
+                CheckedChanged="OnRBChecked"/>
+        </VerticalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button
+                x:Name="SignupBtn"
+                Text="Зарегистрироваться"
+                Command="{Binding SignUpCommand}"/>
+            <Button
+                x:Name="QuitBtn"
+                Text="Вернуться"
+                Clicked="OnBack"/>
+
+        </HorizontalStackLayout>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

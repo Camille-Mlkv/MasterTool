@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MasterTool.UI.Pages.ClientPages.RequestsListPage"
+             Title="RequestsListPage">
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding UpdateRequestsListCommand }"/>
+    </ContentPage.Behaviors>
+
+    <ScrollView>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding Requests}" VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" Margin="5" BackgroundColor="#EEEEEE">
+                            <Label Text="Service" FontAttributes="Bold" />
+                            <Label Text="{Binding Service}" />
+                            <Label Text="ItemType" FontAttributes="Bold" />
+                            <Label Text="{Binding ItemType}" />
+                            <Label Text="Problem" FontAttributes="Bold" />
+                            <Label Text="{Binding Problem}" />
+                            <Label Text="UsageTime" FontAttributes="Bold" />
+                            <Label Text="{Binding UsageTime}" />
+                            <Label Text="Manufacturer" FontAttributes="Bold" />
+                            <Label Text="{Binding Manufacturer}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

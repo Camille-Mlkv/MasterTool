@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterTool.UI.Pages.EditPersonalDataPage"
+             Title="EditPersonalDataPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="{Binding User.Name}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Entry
+            x:Name="NameEntry"
+            Placeholder="{Binding User.Name}"
+            FontFamily="Helvetica"
+            FontSize="17"
+            MaxLength="25"
+            WidthRequest="250"
+            Text="{Binding User.Name}"/>
+        <Entry
+            x:Name="SurnameEntry"
+            Placeholder = "{Binding User.Surname}" 
+            FontFamily="Helvetica"
+            FontSize="17"
+            MaxLength="25"
+            WidthRequest="250"
+            Text="{Binding User.Surname}"/>
+        <Entry
+            x:Name="PhoneEntry"
+            Placeholder = "{Binding User.PhoneNumber}" 
+            FontFamily="Helvetica"
+            FontSize="17"
+            MaxLength="25"
+            WidthRequest="250"
+            Text="{Binding User.PhoneNumber}"/>
+        <Entry
+            x:Name="EmailEntry"
+            Placeholder="{Binding User.Email}"
+            FontFamily="Helvetica"
+            FontSize="17"
+            MaxLength="25"
+            WidthRequest="250"
+            Text="{Binding User.Email}"/>
+        <Button
+            Text="Save and leave"
+            Command="{Binding SaveAndLeaveCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>

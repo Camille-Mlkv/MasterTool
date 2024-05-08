@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterTool.UI.Pages.ClientPages.CreateRequestPage"
+             Title="CreateRequestPage">
+    <VerticalStackLayout>
+        <Entry Placeholder="Тип услуги" Text="{Binding Request.Service}" />
+        <Entry Placeholder="Тип товара" Text="{Binding Request.ItemType}"/>
+        <Entry Placeholder="Проблема" Text="{Binding Request.Problem}"/>
+        <Entry Placeholder="Время использования" Text="{Binding Request.UsageTime}"/>
+        <Entry Placeholder="Производитель" Text="{Binding Request.Manufacturer}"/>
+        <Button Text="Отправить" Command="{Binding CreateRequestCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>
