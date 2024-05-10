@@ -15,6 +15,8 @@ namespace MasterTool.UI
             Routing.RegisterRoute(nameof(CreateRequestPage),typeof(CreateRequestPage));
             Routing.RegisterRoute(nameof(RequestsListPage), typeof(RequestsListPage));
             Routing.RegisterRoute(nameof(NotApprovedRequestsPage), typeof(NotApprovedRequestsPage));
+            Routing.RegisterRoute(nameof(OrdersInProcessPage), typeof(OrdersInProcessPage));
+            Routing.RegisterRoute(nameof(OrderDetailsPage), typeof(OrderDetailsPage));
         }
     }
 }

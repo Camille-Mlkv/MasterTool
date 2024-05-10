@@ -87,5 +87,16 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
             await Shell.Current.GoToAsync(nameof(LogInPage));
         }
 
+        [RelayCommand]
+        public async Task CheckNotReadyOrders() => await GoToNotReadyOrders();
+        private async Task GoToNotReadyOrders()
+        {
+            IDictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                {"ClientId",CurrentUser.CurrentClient.Id }
+            };
+
+            await Shell.Current.GoToAsync(nameof(OrdersInProcessPage), parameters);
+        }
     }
 }

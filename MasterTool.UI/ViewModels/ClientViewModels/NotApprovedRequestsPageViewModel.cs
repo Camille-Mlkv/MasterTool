@@ -30,7 +30,7 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
         public async Task UpdateRequestsList() => await GetNotApprovedRequests();
         private async Task GetNotApprovedRequests()
         {
-            var requests = await _context.GetFileteredAsync<Request>(r => r.ClientId == ClientId && r.IsApproved == false);
+            var requests = await _context.GetFileteredAsync<Request>(r => r.ClientId == ClientId && r.IsApproved == false && r.IsOrder==false);
             await MainThread.InvokeOnMainThreadAsync(() =>
             {
                 Requests.Clear();

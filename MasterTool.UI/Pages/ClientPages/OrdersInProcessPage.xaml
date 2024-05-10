@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:models="clr-namespace:MasterTool.UI.ViewModels.ClientViewModels"
+             x:Class="MasterTool.UI.Pages.ClientPages.OrdersInProcessPage"
+             Title="OrdersInProcessPage">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding UpdateOrdersListCommand }"/>
+    </ContentPage.Behaviors>
+
+    <ScrollView>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding Orders}" VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" Margin="5" BackgroundColor="#EEEEEE">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersInProcessPageViewModel}},Path=ShowDetailsCommand}" CommandParameter="{Binding}"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="Order #" FontAttributes="Bold" />
+                            <Label Text="{Binding Id}" />
+                            <Label Text="Price" FontAttributes="Bold" />
+                            <Label Text="{Binding Price}" />
+                            <Label Text="Date" FontAttributes="Bold" />
+                            <Label Text="{Binding Date}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button x:Name="BackBtn" Text="Назад" Command="{Binding GoBackCommand}"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

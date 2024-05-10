@@ -21,7 +21,9 @@ namespace MasterTool.UI
                     .AddTransient<EditPersonalDataPage>()
                     .AddTransient<CreateRequestPage>()
                     .AddTransient<RequestsListPage>()
-                    .AddTransient<NotApprovedRequestsPage>();
+                    .AddTransient<NotApprovedRequestsPage>()
+                    .AddTransient<OrdersInProcessPage>()
+                    .AddTransient<OrderDetailsPage>();
             return services;
         }
         public static IServiceCollection RegisterViewModels(this IServiceCollection services)
@@ -32,7 +34,9 @@ namespace MasterTool.UI
                     .AddTransient<EditPersonalDataPageViewModel>()
                     .AddTransient<CreateRequestPageViewModel>()
                     .AddTransient<RequestsListPageViewModel>()
-                    .AddTransient<NotApprovedRequestsPageViewModel>();
+                    .AddTransient<NotApprovedRequestsPageViewModel>()
+                    .AddTransient<OrdersInProcessPageViewModel>()
+                    .AddTransient<OrderDetailsPageViewModel>();
             return services;
         }
 
