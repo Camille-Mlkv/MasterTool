@@ -1,9 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
 using MasterToolPersistence;
-using MAUISql.Data;
-using MasterTool.UI.Pages;
-using MasterTool.UI.ViewModels;
 
 namespace MasterTool.UI
 {

@@ -1,3 +1,11 @@
 ﻿global using MasterToolDomain.Entities;
 global using MasterTool.UI.CurrentData;
 global using MAUISql.Data;
+global using MasterTool.UI.Pages;
+global using MasterTool.UI.Pages.ClientPages;
+global using MasterTool.UI.Pages.MasterPages;
+global using MasterTool.UI.Pages.AdminPages;
+global using MasterTool.UI.ViewModels;
+global using MasterTool.UI.ViewModels.ClientViewModels;
+global using MasterTool.UI.ViewModels.MasterViewModels;
+global using MasterTool.UI.ViewModels.AdminViewModels;

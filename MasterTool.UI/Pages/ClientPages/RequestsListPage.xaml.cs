@@ -1,7 +1,3 @@
-using MasterTool.UI.ViewModels.ClientViewModels;
-using MasterToolDomain.Entities;
-using MAUISql.Data;
-
 namespace MasterTool.UI.Pages.ClientPages;
 
 public partial class RequestsListPage : ContentPage

@@ -1,10 +1,3 @@
-using MasterTool.UI.Pages.AdminPages;
-using MasterTool.UI.Pages.ClientPages;
-using MasterTool.UI.Pages.MasterPages;
-using MasterTool.UI.ViewModels;
-using MAUISql.Data;
-using SQLitePCL;
-
 namespace MasterTool.UI.Pages;
 
 public partial class EditPersonalDataPage : ContentPage

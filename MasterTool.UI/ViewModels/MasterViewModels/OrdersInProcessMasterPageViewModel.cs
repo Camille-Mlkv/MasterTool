@@ -1,7 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MasterTool.UI.Pages.ClientPages;
-using MasterTool.UI.Pages.MasterPages;
 using System.Collections.ObjectModel;
 
 namespace MasterTool.UI.ViewModels.MasterViewModels

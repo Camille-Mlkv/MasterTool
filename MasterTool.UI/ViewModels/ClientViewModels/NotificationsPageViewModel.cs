@@ -1,7 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MasterToolDomain.Entities;
-using MAUISql.Data;
 using System.Collections.ObjectModel;
 
 namespace MasterTool.UI.ViewModels.ClientViewModels

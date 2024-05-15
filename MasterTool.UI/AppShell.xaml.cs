@@ -1,8 +1,4 @@
-﻿using MasterTool.UI.Pages;
-using MasterTool.UI.Pages.AdminPages;
-using MasterTool.UI.Pages.ClientPages;
-using MasterTool.UI.Pages.MasterPages;
-
+﻿
 namespace MasterTool.UI
 {
     public partial class AppShell : Shell
@@ -33,6 +29,7 @@ namespace MasterTool.UI
             Routing.RegisterRoute(nameof(AdminHomePage),typeof(AdminHomePage));
             Routing.RegisterRoute(nameof(RequestsToConfirmPage), typeof(RequestsToConfirmPage));
             Routing.RegisterRoute(nameof(AddNewServicePage), typeof(AddNewServicePage));
+            Routing.RegisterRoute(nameof(CheckServicesPage), typeof(CheckServicesPage));
         }
     }
 }

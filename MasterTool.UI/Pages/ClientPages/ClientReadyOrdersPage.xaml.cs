@@ -1,5 +1,3 @@
-using MasterTool.UI.ViewModels.ClientViewModels;
-
 namespace MasterTool.UI.Pages.ClientPages;
 
 public partial class ClientReadyOrdersPage : ContentPage

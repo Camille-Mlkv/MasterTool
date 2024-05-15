@@ -1,5 +1,3 @@
-using MasterTool.UI.ViewModels;
-
 namespace MasterTool.UI.Pages.AdminPages;
 
 public partial class AdminHomePage : ContentPage

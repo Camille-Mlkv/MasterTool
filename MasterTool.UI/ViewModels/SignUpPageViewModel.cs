@@ -1,19 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MasterTool.UI.Pages.AdminPages;
-using MasterTool.UI.Pages.ClientPages;
-using MasterTool.UI.Pages.MasterPages;
-using MasterToolDomain.Entities;
-using MAUISql.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace MasterTool.UI.ViewModels
 {

@@ -1,6 +1,3 @@
-using MasterTool.UI.ViewModels.ClientViewModels;
-using MAUISql.Data;
-
 namespace MasterTool.UI.Pages.ClientPages;
 
 public partial class ClientHomePage : ContentPage

@@ -1,9 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MasterTool.UI.Pages;
-using MasterTool.UI.Pages.ClientPages;
-using MasterToolDomain.Entities;
-using MAUISql.Data;
 
 namespace MasterTool.UI.ViewModels.ClientViewModels
 {

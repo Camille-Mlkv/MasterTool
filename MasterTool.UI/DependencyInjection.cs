@@ -1,17 +1,4 @@
-﻿using CommunityToolkit.Maui;
-using MasterTool.UI.Pages;
-using MasterTool.UI.Pages.AdminPages;
-using MasterTool.UI.Pages.ClientPages;
-using MasterTool.UI.Pages.MasterPages;
-using MasterTool.UI.ViewModels;
-using MasterTool.UI.ViewModels.AdminViewModels;
-using MasterTool.UI.ViewModels.ClientViewModels;
-using MasterTool.UI.ViewModels.MasterViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace MasterTool.UI
 {
@@ -84,7 +71,8 @@ namespace MasterTool.UI
         {
             services.AddTransient<AdminHomePage>()
                     .AddTransient<RequestsToConfirmPage>()
-                    .AddTransient<AddNewServicePage>();
+                    .AddTransient<AddNewServicePage>()
+                    .AddTransient<CheckServicesPage>();
             return services;
         }
 
@@ -92,7 +80,8 @@ namespace MasterTool.UI
         {
             services.AddTransient<AdminHomePageViewModel>()
                     .AddTransient<RequestsToConfirmPageViewModel>()
-                    .AddTransient<AddNewServicePageViewModel>();
+                    .AddTransient<AddNewServicePageViewModel>()
+                    .AddTransient<CheckServicesPageViewModel>();
             return services;
         }
     }

@@ -25,6 +25,7 @@
 
         <MenuBarItem Text="Сервисы">
             <MenuFlyoutItem Text="Добавить сервис" Command="{Binding AddNewServiceCommand}"/>
+            <MenuFlyoutItem Text="Просмтотреть сервисы" Command="{Binding CheckServicesCommand}"/>
         </MenuBarItem>
 
         <MenuBarItem Text="Заявки">

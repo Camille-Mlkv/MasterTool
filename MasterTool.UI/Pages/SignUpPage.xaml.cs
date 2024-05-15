@@ -1,6 +1,3 @@
-using MasterTool.UI.ViewModels;
-using MAUISql.Data;
-
 namespace MasterTool.UI.Pages;
 
 public partial class SignUpPage : ContentPage

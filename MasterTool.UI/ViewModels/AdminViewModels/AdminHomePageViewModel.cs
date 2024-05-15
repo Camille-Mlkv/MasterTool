@@ -1,12 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MasterTool.UI.Pages;
-using MasterTool.UI.Pages.AdminPages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MasterTool.UI.ViewModels
 {
@@ -62,6 +55,13 @@ namespace MasterTool.UI.ViewModels
         private async Task GoToAddNewServicePage()
         {
             await Shell.Current.GoToAsync(nameof(AddNewServicePage));
+        }
+
+        [RelayCommand]
+        public async Task CheckServices() => await GoToServicesPage();
+        private async Task GoToServicesPage()
+        {
+            await Shell.Current.GoToAsync(nameof(CheckServicesPage));
         }
     }
 }
