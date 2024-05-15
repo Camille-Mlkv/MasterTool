@@ -13,7 +13,7 @@ namespace MasterToolDomain.Entities
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string? Date { get; set; }
-        public int? BaseRequestId { get; set; }
+        public int BaseRequestId { get; set; }
         public int MasterId { get; set; }
         public int ClientId { get; set; }
         public bool IsReady { get; set; }

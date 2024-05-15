@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MasterTool.UI.Pages.AdminPages;
 using MasterTool.UI.Pages.ClientPages;
+using MasterTool.UI.Pages.MasterPages;
 using MAUISql.Data;
 using System;
 using System.Collections.Generic;
@@ -33,41 +35,37 @@ namespace MasterTool.UI.ViewModels
             {
                 Client client = new Client(User);
                 client.Id = Convert.ToInt32(User.Id);
-
                 CurrentUser.CurrentClient = client; //update in program
 
                 await _context.UpdateItemAsync<Client>(client);
-                await Shell.Current.DisplayAlert("Alert", "Updated", "Ok");
-                //IDictionary<string, object> parameters = new Dictionary<string, object>()
-                //{
-                //    { "Client", client }
-                //};
 
-                await Shell.Current.GoToAsync(nameof(ClientHomePage)); //parameters
+                await Shell.Current.DisplayAlert("Alert", "Updated", "Ok");
+                await Shell.Current.GoToAsync(nameof(ClientHomePage));
             }
             else if(User.UserCategory == "Master")
             {
                 Master master = new Master(User);
                 master.Id = Convert.ToInt32(User.Id);
-                await _context.UpdateItemAsync<Master>(master);
-                //IDictionary<string, object> parameters = new Dictionary<string, object>()
-                //{
-                //    { "Master", master }
-                //};
+                CurrentUser.CurrentMaster = master;
 
-                //go to master home page
+                await _context.UpdateItemAsync<Master>(master);
+
+                await Shell.Current.DisplayAlert("Alert", "Updated", "Ok");
+
+                await Shell.Current.GoToAsync(nameof(MasterHomePage));
+
             }
             else if (User.UserCategory == "Admin")
             {
                 Admin admin = new Admin(User);
                 admin.Id = Convert.ToInt32(User.Id);
-                await _context.UpdateItemAsync<Admin>(admin);
-                //IDictionary<string, object> parameters = new Dictionary<string, object>()
-                //{
-                //    { "Admin", admin }
-                //};
+                CurrentUser.CurrentAdmin = admin;
 
-                //go to admin home page
+                await _context.UpdateItemAsync<Admin>(admin);
+
+                await Shell.Current.DisplayAlert("Alert", "Updated", "Ok");
+
+                await Shell.Current.GoToAsync(nameof(AdminHomePage));
             }
         }
 

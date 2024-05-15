@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MasterTool.UI.Pages.AdminPages;
 using MasterTool.UI.Pages.ClientPages;
+using MasterTool.UI.Pages.MasterPages;
 using MasterToolDomain.Entities;
 using MAUISql.Data;
 using System;
@@ -49,12 +51,8 @@ namespace MasterTool.UI.ViewModels
                 Client client = new Client(newUser);
                 await _context.AddItemAsync<Client>(client);
                 CurrentUser.CurrentClient = client;
-                //IDictionary<string, object> parameters = new Dictionary<string, object>()
-                //{
-                //    { "Client", client }
-                //};
 
-                await Shell.Current.GoToAsync(nameof(ClientHomePage)); //parameters
+                await Shell.Current.GoToAsync(nameof(ClientHomePage));
             }
             else
             {
@@ -69,13 +67,19 @@ namespace MasterTool.UI.ViewModels
                     {
                         Master master = new Master(newUser);
                         await _context.AddItemAsync<Master>(master);
-                        //go to master page
+                        CurrentUser.CurrentMaster = master;
+
+                        await Shell.Current.GoToAsync(nameof(MasterHomePage)); //go to master page
+
                     }
 
                     if (UserType == "Admin")
                     {
                         Admin admin = new Admin(newUser);
                         await _context.AddItemAsync<Admin>(admin);
+                        CurrentUser.CurrentAdmin = admin;
+
+                        await Shell.Current.GoToAsync(nameof(AdminHomePage));
                         //go to admin page
                     }
                 }

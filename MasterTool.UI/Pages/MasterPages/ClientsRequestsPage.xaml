@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:models="clr-namespace:MasterTool.UI.ViewModels.MasterViewModels"
+             x:Class="MasterTool.UI.Pages.MasterPages.ClientsRequestsPage"
+             Title="ClientsRequestsPage">
+    
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding LoadRequestsCommand }"/>
+    </ContentPage.Behaviors>
+
+    <ScrollView>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding Requests}" VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" Margin="5" BackgroundColor="#EEEEEE">
+                            <!--<Label Text="Service" FontAttributes="Bold" />
+                            <Label Text="{Binding Service}" />-->
+                            <Label Text="ItemType" FontAttributes="Bold" />
+                            <Label Text="{Binding ItemType}" />
+                            <Label Text="Problem" FontAttributes="Bold" />
+                            <Label Text="{Binding Problem}" />
+                            <Label Text="UsageTime" FontAttributes="Bold" />
+                            <Label Text="{Binding UsageTime}" />
+                            <Label Text="Manufacturer" FontAttributes="Bold" />
+                            <Label Text="{Binding Manufacturer}" />
+                            <Button Text="Откликнуться" Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientsRequestsPageViewModel}},Path=AcceptRequestCommand}" CommandParameter="{Binding}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

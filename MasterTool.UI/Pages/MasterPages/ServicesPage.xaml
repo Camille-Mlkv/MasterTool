@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterTool.UI.Pages.MasterPages.ServicesPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:models="clr-namespace:MasterTool.UI.ViewModels.MasterViewModels"
+             Title="ServicesPage">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding UpdateServicesListCommand }"/>
+    </ContentPage.Behaviors>
+
+    <StackLayout>
+        <CollectionView ItemsSource="{Binding Services}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="10"
+                        Margin="10"
+                        Padding="10"
+                        BorderColor="LightGray"
+                        HasShadow="True">
+                        <StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type models:ServicesPageViewModel}},Path=ShowClientsRequestsCommand}" CommandParameter="{Binding}"/>
+                            </StackLayout.GestureRecognizers>
+
+                            <VerticalStackLayout>
+                                <Label Text="{Binding ServiceName}"
+                                    FontSize="Medium"
+                                    HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <Button Text="Go back"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding GoBackCommand}"/>
+    </StackLayout>
+
+
+</ContentPage>

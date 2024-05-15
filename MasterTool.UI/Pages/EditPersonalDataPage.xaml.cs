@@ -1,4 +1,6 @@
+using MasterTool.UI.Pages.AdminPages;
 using MasterTool.UI.Pages.ClientPages;
+using MasterTool.UI.Pages.MasterPages;
 using MasterTool.UI.ViewModels;
 using MAUISql.Data;
 using SQLitePCL;
@@ -22,6 +24,14 @@ public partial class EditPersonalDataPage : ContentPage
         if (viewModel.User.UserCategory == "Client")
         {
             await Shell.Current.GoToAsync(nameof(ClientHomePage));
+        }
+        if(viewModel.User.UserCategory == "Master")
+        {
+            await Shell.Current.GoToAsync(nameof(MasterHomePage));
+        }
+        if (viewModel.User.UserCategory == "Admin")
+        {
+            await Shell.Current.GoToAsync(nameof(AdminHomePage));
         }
     }
 }

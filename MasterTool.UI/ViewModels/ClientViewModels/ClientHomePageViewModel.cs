@@ -7,13 +7,10 @@ using MAUISql.Data;
 
 namespace MasterTool.UI.ViewModels.ClientViewModels
 {
-    //[QueryProperty(nameof(Client), "Client")]
     public partial class ClientHomePageViewModel:ObservableObject
     {
         private DatabaseContext _context;
 
-        //[ObservableProperty]
-        //private Client _client;
         public ClientHomePageViewModel(DatabaseContext context)
         {
             _context = context;
@@ -80,14 +77,6 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
         }
 
         [RelayCommand]
-        public async Task LogOut() => await PerformLogOutOperation();
-        private async Task PerformLogOutOperation()
-        {
-            CurrentUser.CurrentClient = null;
-            await Shell.Current.GoToAsync(nameof(LogInPage));
-        }
-
-        [RelayCommand]
         public async Task CheckNotReadyOrders() => await GoToNotReadyOrders();
         private async Task GoToNotReadyOrders()
         {
@@ -97,6 +86,29 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
             };
 
             await Shell.Current.GoToAsync(nameof(OrdersInProcessPage), parameters);
+        }
+
+
+        [RelayCommand]
+        public async Task LogOut() => await PerformLogOutOperation();
+        private async Task PerformLogOutOperation()
+        {
+            CurrentUser.CurrentClient = null;
+            await Shell.Current.GoToAsync(nameof(LogInPage));
+        }
+
+        [RelayCommand]
+        public async Task GetNotifications() => await GoToNotificationsPage();
+        private async Task GoToNotificationsPage()
+        {
+            await Shell.Current.GoToAsync(nameof(NotificationsPage));
+        }
+
+        [RelayCommand]
+        public async Task CheckReadyOrders() => await GoToReadyOrders();
+        private async Task GoToReadyOrders()
+        {
+            await Shell.Current.GoToAsync(nameof(ClientReadyOrdersPage));
         }
     }
 }

@@ -1,8 +1,12 @@
 ﻿using CommunityToolkit.Maui;
 using MasterTool.UI.Pages;
+using MasterTool.UI.Pages.AdminPages;
 using MasterTool.UI.Pages.ClientPages;
+using MasterTool.UI.Pages.MasterPages;
 using MasterTool.UI.ViewModels;
+using MasterTool.UI.ViewModels.AdminViewModels;
 using MasterTool.UI.ViewModels.ClientViewModels;
+using MasterTool.UI.ViewModels.MasterViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,28 +21,79 @@ namespace MasterTool.UI
         {
             services.AddTransient<SignUpPage>()
                     .AddTransient<LogInPage>()
-                    .AddTransient<ClientHomePage>()
-                    .AddTransient<EditPersonalDataPage>()
-                    .AddTransient<CreateRequestPage>()
-                    .AddTransient<RequestsListPage>()
-                    .AddTransient<NotApprovedRequestsPage>()
-                    .AddTransient<OrdersInProcessPage>()
-                    .AddTransient<OrderDetailsPage>();
+                    .AddTransient<EditPersonalDataPage>();
             return services;
         }
         public static IServiceCollection RegisterViewModels(this IServiceCollection services)
         {
             services.AddTransient<SignUpPageViewModel>()
                     .AddTransient<LogInPageViewModel>()
-                    .AddTransient<ClientHomePageViewModel>()
-                    .AddTransient<EditPersonalDataPageViewModel>()
+                    .AddTransient<EditPersonalDataPageViewModel>();
+            return services;
+        }
+
+        public static IServiceCollection RegisterClientPages(this IServiceCollection services)
+        {
+            services.AddTransient<ClientHomePage>()
+                    .AddTransient<CreateRequestPage>()
+                    .AddTransient<RequestsListPage>()
+                    .AddTransient<NotApprovedRequestsPage>()
+                    .AddTransient<OrdersInProcessPage>()
+                    .AddTransient<OrderDetailsPage>()
+                    .AddTransient<NotificationsPage>()
+                    .AddTransient<ClientReadyOrdersPage>();
+            return services;
+        }
+
+        public static IServiceCollection RegisterClientViewModels(this IServiceCollection services)
+        {
+            services.AddTransient<ClientHomePageViewModel>()
                     .AddTransient<CreateRequestPageViewModel>()
                     .AddTransient<RequestsListPageViewModel>()
                     .AddTransient<NotApprovedRequestsPageViewModel>()
                     .AddTransient<OrdersInProcessPageViewModel>()
-                    .AddTransient<OrderDetailsPageViewModel>();
+                    .AddTransient<OrderDetailsPageViewModel>()
+                    .AddTransient<NotificationsPageViewModel>()
+                    .AddTransient<ClientReadyOrdersPageViewModel>();
             return services;
         }
 
+        public static IServiceCollection RegisterMasterPages(this IServiceCollection services)
+        {
+            services.AddTransient<MasterHomePage>()
+                    .AddTransient<ServicesPage>()
+                    .AddTransient<ClientsRequestsPage>()
+                    .AddTransient<OrdersInProcessMasterPage>()
+                    .AddTransient<OrderDetailsMasterPage>()
+                    .AddTransient<MasterReadyOrdersPage>();
+            return services;
+        }
+
+        public static IServiceCollection RegisterMasterViewModels(this IServiceCollection services)
+        {
+            services.AddTransient<MasterHomePageViewModel>()
+                    .AddTransient<ServicesPageViewModel>()
+                    .AddTransient<ClientsRequestsPageViewModel>()
+                    .AddTransient<OrdersInProcessMasterPageViewModel>()
+                    .AddTransient<OrderDetailsMasterPageViewModel>()
+                    .AddTransient<MasterReadyOrdersPageViewModel>();
+            return services;
+        }
+
+        public static IServiceCollection RegisterAdminPages(this IServiceCollection services)
+        {
+            services.AddTransient<AdminHomePage>()
+                    .AddTransient<RequestsToConfirmPage>()
+                    .AddTransient<AddNewServicePage>();
+            return services;
+        }
+
+        public static IServiceCollection RegisterAdminViewModels(this IServiceCollection services)
+        {
+            services.AddTransient<AdminHomePageViewModel>()
+                    .AddTransient<RequestsToConfirmPageViewModel>()
+                    .AddTransient<AddNewServicePageViewModel>();
+            return services;
+        }
     }
 }

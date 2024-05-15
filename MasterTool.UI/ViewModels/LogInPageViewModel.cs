@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MasterTool.UI.Pages.AdminPages;
 using MasterTool.UI.Pages.ClientPages;
+using MasterTool.UI.Pages.MasterPages;
 using MAUISql.Data;
 using System;
 using System.Collections.Generic;
@@ -33,11 +35,6 @@ namespace MasterTool.UI.ViewModels
             {
                 Client client=clientSearch.First();
                 CurrentUser.CurrentClient = client;
-                //IDictionary<string, object> parameters = new Dictionary<string, object>()
-                //{
-                //    { "Client", client }
-                //};
-
                 await Shell.Current.GoToAsync(nameof(ClientHomePage)); //go to client page parameters
 
                 return;
@@ -48,7 +45,8 @@ namespace MasterTool.UI.ViewModels
                 if (masterSearch.Any())
                 {
                     Master master=masterSearch.First();
-                    //go to master page
+                    CurrentUser.CurrentMaster = master;
+                    await Shell.Current.GoToAsync(nameof(MasterHomePage));                    //go to master page
                     return;
                 }
                 else
@@ -57,7 +55,8 @@ namespace MasterTool.UI.ViewModels
                     if (adminSearch.Any())
                     {
                         Admin admin=adminSearch.First();
-                        //go to admin page
+                        CurrentUser.CurrentAdmin = admin;
+                        await Shell.Current.GoToAsync(nameof(AdminHomePage));
                         return;
                     }
                 }

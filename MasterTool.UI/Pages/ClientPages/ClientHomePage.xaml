@@ -20,12 +20,12 @@
     <ContentPage.MenuBarItems>
 
         <MenuBarItem Text="Мой аккаунт">
-            <MenuFlyoutItem Text="Данные" 
-                    Command="{Binding GetPersonalDataCommand}" />
+            <MenuFlyoutItem Text="Данные" Command="{Binding GetPersonalDataCommand}" />
+            <MenuFlyoutItem Text="Уведомления" Command="{Binding GetNotificationsCommand}" />
         </MenuBarItem>
 
         <MenuBarItem Text="Мои заказы">
-            <MenuFlyoutItem Text="Готовые"/>
+            <MenuFlyoutItem Text="Готовые" Command="{Binding CheckReadyOrdersCommand}"/>
             <MenuFlyoutItem Text="В процессе" Command="{Binding CheckNotReadyOrdersCommand}"/>
         </MenuBarItem>
 

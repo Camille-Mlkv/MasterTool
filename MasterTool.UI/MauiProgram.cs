@@ -22,7 +22,13 @@ namespace MasterTool.UI
             string connectionString = Path.Combine(FileSystem.AppDataDirectory, "MasterToolDatabase.db3");
             builder.Services.AddPersistence(connectionString)
                              .RegisterPages()
-                             .RegisterViewModels();
+                             .RegisterViewModels()
+                             .RegisterClientPages()
+                             .RegisterClientViewModels()
+                             .RegisterMasterPages()
+                             .RegisterMasterViewModels()
+                             .RegisterAdminPages()
+                             .RegisterAdminViewModels();
             
 #if DEBUG
             builder.Logging.AddDebug();

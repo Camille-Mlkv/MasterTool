@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterTool.UI.Pages.MasterPages.MasterHomePage"
+             Title="MasterHomePage">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+
+    <VerticalStackLayout>
+        <Label
+        x:Name="GreetingLbl"
+        Text=""
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+    </VerticalStackLayout>
+
+
+    <ContentPage.MenuBarItems>
+
+        <MenuBarItem Text="Мой аккаунт">
+            <MenuFlyoutItem Text="Данные" 
+                Command="{Binding GetPersonalDataCommand}" />
+        </MenuBarItem>
+
+        <MenuBarItem Text="Мои заказы">
+            <MenuFlyoutItem Text="Выполненные" Command="{Binding LoadReadyOrdersCommand}"/>
+            <MenuFlyoutItem Text="В процессе" Command="{Binding LoadOrdersInProcessCommand}"/>
+        </MenuBarItem>
+
+        <MenuBarItem Text="Заявки клиентов">
+            <MenuFlyoutItem Text="Просмотреть" Command="{Binding CheckClientsRequestsCommand}"/>
+        </MenuBarItem>
+
+    </ContentPage.MenuBarItems>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Выйти" Order="Secondary" Command="{Binding LogOutCommand}"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>
