@@ -1,5 +1,7 @@
 ﻿
 
+using CommunityToolkit.Maui;
+
 namespace MasterTool.UI
 {
     public static class DependencyInjection
@@ -72,7 +74,8 @@ namespace MasterTool.UI
             services.AddTransient<AdminHomePage>()
                     .AddTransient<RequestsToConfirmPage>()
                     .AddTransient<AddNewServicePage>()
-                    .AddTransient<CheckServicesPage>();
+                    .AddTransient<CheckServicesPage>()
+                    .AddTransient<CashBoxPage>();
             return services;
         }
 
@@ -81,7 +84,8 @@ namespace MasterTool.UI
             services.AddTransient<AdminHomePageViewModel>()
                     .AddTransient<RequestsToConfirmPageViewModel>()
                     .AddTransient<AddNewServicePageViewModel>()
-                    .AddTransient<CheckServicesPageViewModel>();
+                    .AddTransient<CheckServicesPageViewModel>()
+                    .AddTransient<CashBoxPageViewModel>();
             return services;
         }
     }

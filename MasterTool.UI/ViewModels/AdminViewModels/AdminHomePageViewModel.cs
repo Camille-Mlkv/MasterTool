@@ -63,5 +63,12 @@ namespace MasterTool.UI.ViewModels
         {
             await Shell.Current.GoToAsync(nameof(CheckServicesPage));
         }
+
+        [RelayCommand]
+        public async Task CheckCashBox() => await GoToCashBoxPage();
+        private async Task GoToCashBoxPage()
+        {
+            await Shell.Current.GoToAsync(nameof(CashBoxPage));
+        }
     }
 }

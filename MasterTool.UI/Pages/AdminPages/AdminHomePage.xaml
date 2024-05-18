@@ -25,11 +25,15 @@
 
         <MenuBarItem Text="Сервисы">
             <MenuFlyoutItem Text="Добавить сервис" Command="{Binding AddNewServiceCommand}"/>
-            <MenuFlyoutItem Text="Просмтотреть сервисы" Command="{Binding CheckServicesCommand}"/>
+            <MenuFlyoutItem Text="Просмотреть сервисы" Command="{Binding CheckServicesCommand}"/>
         </MenuBarItem>
 
         <MenuBarItem Text="Заявки">
             <MenuFlyoutItem Text="Неодобренные заявки" Command="{Binding CheckOpenRequestsCommand}" />
+        </MenuBarItem>
+
+        <MenuBarItem Text="Касса">
+            <MenuFlyoutItem Text="Просмотреть кассу" Command="{Binding CheckCashBoxCommand}"/>
         </MenuBarItem>
 
     </ContentPage.MenuBarItems>

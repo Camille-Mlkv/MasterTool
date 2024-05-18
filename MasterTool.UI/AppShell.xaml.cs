@@ -30,6 +30,7 @@ namespace MasterTool.UI
             Routing.RegisterRoute(nameof(RequestsToConfirmPage), typeof(RequestsToConfirmPage));
             Routing.RegisterRoute(nameof(AddNewServicePage), typeof(AddNewServicePage));
             Routing.RegisterRoute(nameof(CheckServicesPage), typeof(CheckServicesPage));
+            Routing.RegisterRoute(nameof(CashBoxPage), typeof(CashBoxPage));
         }
     }
 }

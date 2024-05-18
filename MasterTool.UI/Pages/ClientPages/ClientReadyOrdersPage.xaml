@@ -26,6 +26,7 @@
                             <Label Text="Date" FontAttributes="Bold" />
                             <Label Text="{Binding Date}" />
                             <Button Text="Оплатить"/>
+                            <Button Text="Оставить отзыв"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
