@@ -36,6 +36,10 @@
             <MenuFlyoutItem Text="Просмотреть кассу" Command="{Binding CheckCashBoxCommand}"/>
         </MenuBarItem>
 
+        <MenuBarItem Text="Склад">
+            <MenuFlyoutItem Text="Просмотреть склад" Command="{Binding CheckStorageCommand}"/>
+        </MenuBarItem>
+
     </ContentPage.MenuBarItems>
 
     <ContentPage.ToolbarItems>

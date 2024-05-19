@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterTool.UI.Pages.AdminPages.AddNewDetailPage"
+             Title="AddNewDetailPage">
+    
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+    
+    <VerticalStackLayout>
+        <Entry Placeholder="Наименование детали" Text="{Binding Detail.Name}" />
+        <Entry Placeholder="Производитель" Text="{Binding Detail.Manufacturer}"/>
+        <Entry Placeholder="Стоимость" Text="{Binding Detail.Price}" />
+        <Entry Placeholder="Количество" Text="{Binding Detail.Amount}"/>
+        <Button Text="Отправить" Command="{Binding CreateDetailCommand}"/>
+        <Button Text="Back" Command="{Binding GoBackCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MasterTool.UI.Pages.AdminPages.StoragePage"
+             Title="StoragePage">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+
+    <StackLayout Padding="10">
+        <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="10">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ViewDetailsCommand}" />
+            </Frame.GestureRecognizers>
+            <StackLayout>
+                <Label Text="Детали" FontAttributes="Bold" FontSize="Large" />
+                <Image Source="dotnet_bot.png"  WidthRequest="150" HeightRequest="150" HorizontalOptions="Start" />
+            </StackLayout>
+        </Frame>
+
+        <!--<Frame BackgroundColor="LightGray" Padding="10" CornerRadius="10" Margin="0,20,0,0">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ViewMaterialsCommand}" />
+            </Frame.GestureRecognizers>
+            <StackLayout>
+                <Label Text="Материалы" FontAttributes="Bold" FontSize="Large" />
+                <Image Source="dotnet_bot.png"  WidthRequest="150" HeightRequest="150" HorizontalOptions="Start" />
+            </StackLayout>
+        </Frame>-->
+        <Button Text="Back" Command="{Binding GoBackCommand}"/>
+    </StackLayout>
+</ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,19 @@ namespace MasterToolDomain.Entities
 {
     public class Detail
     {
-        private int Id {  get; set; }
-        private string? Name { get; set; }
-        private string? Manufacturer { get; set; }
-        private double Price { get; set; }
-        private int Amount { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int Id {  get; set; }
+        public string? Name { get; set; }
+        public string? Manufacturer { get; set; }
+        public double Price { get; set; }
+        public int Amount { get; set; }
+        public Detail() { }
+        public Detail(string? name, string? manufacturer, double price, int amount)
+        {
+            Name = name;
+            Manufacturer = manufacturer;
+            Price = price;
+            Amount = amount;
+        }
     }
 }

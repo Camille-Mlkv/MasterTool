@@ -10,14 +10,18 @@ namespace MasterTool.UI
         {
             services.AddTransient<SignUpPage>()
                     .AddTransient<LogInPage>()
-                    .AddTransient<EditPersonalDataPage>();
+                    .AddTransient<EditPersonalDataPage>()
+                    .AddTransient<DetailsPage>()
+                    .AddTransient<DetailInformationPage>();
             return services;
         }
         public static IServiceCollection RegisterViewModels(this IServiceCollection services)
         {
             services.AddTransient<SignUpPageViewModel>()
                     .AddTransient<LogInPageViewModel>()
-                    .AddTransient<EditPersonalDataPageViewModel>();
+                    .AddTransient<EditPersonalDataPageViewModel>()
+                    .AddTransient<DetailsPageViewModel>()
+                    .AddTransient<DetailInformationPageViewModel>();
             return services;
         }
 
@@ -75,7 +79,8 @@ namespace MasterTool.UI
                     .AddTransient<RequestsToConfirmPage>()
                     .AddTransient<AddNewServicePage>()
                     .AddTransient<CheckServicesPage>()
-                    .AddTransient<CashBoxPage>();
+                    .AddTransient<CashBoxPage>()
+                    .AddTransient<AddNewDetailPage>();
             return services;
         }
 
@@ -85,7 +90,8 @@ namespace MasterTool.UI
                     .AddTransient<RequestsToConfirmPageViewModel>()
                     .AddTransient<AddNewServicePageViewModel>()
                     .AddTransient<CheckServicesPageViewModel>()
-                    .AddTransient<CashBoxPageViewModel>();
+                    .AddTransient<CashBoxPageViewModel>()
+                    .AddTransient<AddNewDetailPageViewModel>();
             return services;
         }
     }

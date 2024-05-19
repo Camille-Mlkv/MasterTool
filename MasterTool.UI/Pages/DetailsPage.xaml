@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MasterTool.UI.ViewModels"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MasterTool.UI.Pages.DetailsPage"
+             Title="DetailsPage">
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding LoadDetailsCommand }"/>
+    </ContentPage.Behaviors>
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+
+    <StackLayout>
+        <Button Text="Добавить деталь"
+                Command="{Binding AddDetailCommand}"
+                IsVisible="{Binding IsAdmin}" />
+
+        <CollectionView ItemsSource="{Binding Details}" 
+                        SelectionMode="None">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="10" 
+                           Padding="10" 
+                           Margin="10" 
+                           BackgroundColor="LightGray">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type models:DetailsPageViewModel}}, Path=NavigateToDetailPageCommand}" 
+                                                  CommandParameter="{Binding}" />
+                        </Frame.GestureRecognizers>
+                        <StackLayout>
+                            <Image Source="dotnet_bot.png"
+                                   HeightRequest="100" 
+                                   WidthRequest="100"/>
+                            <Label Text="{Binding Name}" 
+                                   HorizontalOptions="Center" 
+                                   VerticalOptions="Center" 
+                                   FontAttributes="Bold" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Back" Command="{Binding GoBackCommand}"/>
+    </StackLayout>
+</ContentPage>
