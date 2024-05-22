@@ -18,10 +18,11 @@ namespace MasterToolDomain.Entities
         public int ClientId { get; set; }
         public bool IsReady { get; set; }
         public double Price { get; set; }
+        public bool IsPaid { get; set; }
 
         public Order() { }
 
-        public Order(string date, int baseRequestId,int masterId,int clientId, bool isReady, double price)
+        public Order(string date, int baseRequestId,int masterId,int clientId, bool isReady, double price,bool isPaid)
         {
             Date = date;
             MasterId = masterId;
@@ -29,17 +30,7 @@ namespace MasterToolDomain.Entities
             IsReady = isReady;
             Price = price;
             BaseRequestId = baseRequestId;
+            IsPaid = isPaid;
         }
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Order>()
-        //    .OwnsOne<Request>(t => t.BaseRequest);
-
-        //}
-
-
-        //private Dictionary<Detail, int>? Details { get; set; }
-        //private Dictionary<Material,double>? Materials { get; set; }
     }
 }

@@ -34,7 +34,8 @@ namespace MasterTool.UI
                     .AddTransient<OrdersInProcessPage>()
                     .AddTransient<OrderDetailsPage>()
                     .AddTransient<NotificationsPage>()
-                    .AddTransient<ClientReadyOrdersPage>();
+                    .AddTransient<ClientReadyOrdersPage>()
+                    .AddTransient<FeedbackPage>();
             return services;
         }
 
@@ -47,7 +48,8 @@ namespace MasterTool.UI
                     .AddTransient<OrdersInProcessPageViewModel>()
                     .AddTransient<OrderDetailsPageViewModel>()
                     .AddTransient<NotificationsPageViewModel>()
-                    .AddTransient<ClientReadyOrdersPageViewModel>();
+                    .AddTransient<ClientReadyOrdersPageViewModel>()
+                    .AddTransient<FeedbackPageViewModel>();
             return services;
         }
 
@@ -80,7 +82,8 @@ namespace MasterTool.UI
                     .AddTransient<AddNewServicePage>()
                     .AddTransient<CheckServicesPage>()
                     .AddTransient<CashBoxPage>()
-                    .AddTransient<AddNewDetailPage>();
+                    .AddTransient<AddNewDetailPage>()
+                    .AddTransient<FeedbacksPage>();
             return services;
         }
 
@@ -91,7 +94,8 @@ namespace MasterTool.UI
                     .AddTransient<AddNewServicePageViewModel>()
                     .AddTransient<CheckServicesPageViewModel>()
                     .AddTransient<CashBoxPageViewModel>()
-                    .AddTransient<AddNewDetailPageViewModel>();
+                    .AddTransient<AddNewDetailPageViewModel>()
+                    .AddTransient<FeedbacksPageViewModel>();
             return services;
         }
     }

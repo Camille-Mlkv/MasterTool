@@ -40,6 +40,10 @@
             <MenuFlyoutItem Text="Просмотреть склад" Command="{Binding CheckStorageCommand}"/>
         </MenuBarItem>
 
+        <MenuBarItem Text="Отзывы наших клиентов">
+            <MenuFlyoutItem Text="Просмотреть" Command="{Binding CheckFeedbacksCommand}"/>
+        </MenuBarItem>
+
     </ContentPage.MenuBarItems>
 
     <ContentPage.ToolbarItems>

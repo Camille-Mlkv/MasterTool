@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:MasterTool.UI.ViewModels"
+             xmlns:converter="clr-namespace:MasterTool.UI.Converters"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="MasterTool.UI.Pages.DetailsPage"
              Title="DetailsPage">
@@ -13,6 +14,12 @@
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:IntToColorConverter x:Key="IntToColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <StackLayout>
         <Button Text="Добавить деталь"
@@ -26,10 +33,9 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame CornerRadius="10" 
-                           Padding="10" 
+                    <Frame Padding="10" 
                            Margin="10" 
-                           BackgroundColor="LightGray">
+                           BackgroundColor="{Binding Amount, Converter={StaticResource IntToColorConverter}}" CornerRadius="10" HasShadow="True" BorderColor="Transparent">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type models:DetailsPageViewModel}}, Path=NavigateToDetailPageCommand}" 
                                                   CommandParameter="{Binding}" />

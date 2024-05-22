@@ -49,9 +49,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\star_rating.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Syncfusion.Maui.Inputs" Version="25.2.4" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -75,7 +80,13 @@
 	  <MauiXaml Update="Pages\AdminPages\CheckServicesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\AdminPages\FeedbacksPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\AdminPages\RequestsToConfirmPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ClientPages\FeedbackPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\DetailInformationPage.xaml">

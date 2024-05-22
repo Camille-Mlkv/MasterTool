@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:control="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:local="clr-namespace:MasterTool.UI.Converters"
+             x:Class="MasterTool.UI.Pages.ClientPages.FeedbackPage"
+             Title="FeedbackPage">
+    
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding CheckIfHasFeedbackCommand }"/>
+    </ContentPage.Behaviors>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BooleanConverter x:Key="BooleanConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout>
+        <Label 
+            Text="Вы уже оставили отзыв."
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            IsVisible="{Binding HasFeedback}"/>
+
+        <Entry Placeholder="Оставьте пожелание или предложение" Text="{Binding FeedbackText}" IsReadOnly="{Binding HasFeedback}"/>
+
+        <control:SfRating x:Name="myrate"
+                ItemCount="5" ItemSize="40" ItemSpacing="15" Value="{Binding Rate}"
+                Precision="Standard" RatingShape="Star" IsReadOnly="{Binding HasFeedback}">
+            <control:SfRating.RatingSettings>
+                <control:RatingSettings 
+                    RatedFill="Yellow" UnratedStroke="Black" UnratedStrokeThickness="1">
+                </control:RatingSettings>
+            </control:SfRating.RatingSettings>
+        </control:SfRating>
+        <Button Text="Оставить отзыв" Command="{Binding LeaveFeedbackCommand}" IsVisible="{Binding HasFeedback, Converter={StaticResource BooleanConverter}}"/>
+        
+    </VerticalStackLayout>
+</ContentPage>

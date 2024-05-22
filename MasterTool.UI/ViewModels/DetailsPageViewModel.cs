@@ -33,7 +33,7 @@ namespace MasterTool.UI.ViewModels
         [RelayCommand]
         public async Task LoadDetails()
         {
-            var details=await _context.GetFileteredAsync<Detail>(d=>d.Amount!=0);
+            var details=await _context.GetAllAsync<Detail>();
             await MainThread.InvokeOnMainThreadAsync(() =>
             {
                 Details.Clear();

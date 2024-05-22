@@ -38,7 +38,7 @@ namespace MasterTool.UI.ViewModels.MasterViewModels
             request.IsOrder = true;
             await _context.UpdateItemAsync<Request>(request);
             string date = DateTime.Today.ToString();
-            Order newOrder = new Order(date, request.Id, CurrentUser.CurrentMaster.Id, request.ClientId, false, Service.Tarif);
+            Order newOrder = new Order(date, request.Id, CurrentUser.CurrentMaster.Id, request.ClientId, false, Service.Tarif,false);
             await _context.AddItemAsync<Order>(newOrder);
             await Shell.Current.DisplayAlert("Notify", "OK", "OK");
 

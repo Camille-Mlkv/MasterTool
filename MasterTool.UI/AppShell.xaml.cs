@@ -20,6 +20,7 @@ namespace MasterTool.UI
             Routing.RegisterRoute(nameof(OrderDetailsPage), typeof(OrderDetailsPage));
             Routing.RegisterRoute(nameof(NotificationsPage), typeof(NotificationsPage));
             Routing.RegisterRoute(nameof(ClientReadyOrdersPage), typeof(ClientReadyOrdersPage));
+            Routing.RegisterRoute(nameof(FeedbackPage), typeof(FeedbackPage));
 
             Routing.RegisterRoute(nameof(MasterHomePage), typeof(MasterHomePage));
             Routing.RegisterRoute(nameof(ServicesPage), typeof(ServicesPage));
@@ -35,6 +36,7 @@ namespace MasterTool.UI
             Routing.RegisterRoute(nameof(CashBoxPage), typeof(CashBoxPage));
             Routing.RegisterRoute(nameof(StoragePage), typeof(StoragePage));
             Routing.RegisterRoute(nameof(AddNewDetailPage), typeof(AddNewDetailPage));
+            Routing.RegisterRoute(nameof(FeedbacksPage), typeof(FeedbacksPage));
         }
     }
 }
