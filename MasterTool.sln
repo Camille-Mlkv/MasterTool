@@ -5,9 +5,9 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterTool.UI", "MasterTool.UI\MasterTool.UI.csproj", "{EAF2CFA0-BDDF-4685-9ED8-43B5E6859420}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterToolDomain", "MasterToolDomain\MasterToolDomain.csproj", "{B1C9A7AE-F0E5-4399-B6D9-ED3BC7BFA41B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterToolDomain", "MasterToolDomain\MasterToolDomain.csproj", "{B1C9A7AE-F0E5-4399-B6D9-ED3BC7BFA41B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterToolPersistence", "MasterToolPersistence\MasterToolPersistence.csproj", "{27DC4B9C-B2BC-42B1-BACC-1831A74D8AAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterToolPersistence", "MasterToolPersistence\MasterToolPersistence.csproj", "{27DC4B9C-B2BC-42B1-BACC-1831A74D8AAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

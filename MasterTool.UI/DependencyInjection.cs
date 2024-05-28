@@ -35,7 +35,11 @@ namespace MasterTool.UI
                     .AddTransient<OrderDetailsPage>()
                     .AddTransient<NotificationsPage>()
                     .AddTransient<ClientReadyOrdersPage>()
-                    .AddTransient<FeedbackPage>();
+                    .AddTransient<FeedbackPage>()
+                    .AddTransient<AddNewCardPage>()
+                    .AddTransient<CardsPage>()
+                    .AddTransient<ChoosePaymentMethodPage>()
+                    .AddTransient<PayByCardPage>();
             return services;
         }
 
@@ -49,7 +53,11 @@ namespace MasterTool.UI
                     .AddTransient<OrderDetailsPageViewModel>()
                     .AddTransient<NotificationsPageViewModel>()
                     .AddTransient<ClientReadyOrdersPageViewModel>()
-                    .AddTransient<FeedbackPageViewModel>();
+                    .AddTransient<FeedbackPageViewModel>()
+                    .AddTransient<AddNewCardPageViewModel>()
+                    .AddTransient<CardsPageViewModel>()
+                    .AddTransient<ChoosePaymentMethodPageViewModel>()
+                    .AddTransient<PayByCardPageViewModel>();
             return services;
         }
 

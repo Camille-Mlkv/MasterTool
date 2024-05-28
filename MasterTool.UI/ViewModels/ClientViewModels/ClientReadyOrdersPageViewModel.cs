@@ -40,16 +40,26 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
         [RelayCommand]
         public async Task LeaveFeedback(Order order)
         {
-            //if(!order.IsPaid)
-            //{
-            //    await Shell.Current.DisplayAlert("Notification", "Отзыв можно оставить к оплаченному заказу", "OK");
-            //    return;
-            //}
+            if (!order.IsPaid)
+            {
+                await Shell.Current.DisplayAlert("Notification", "Отзыв можно оставить к оплаченному заказу", "OK");
+                return;
+            }
             IDictionary<string, object> parameters = new Dictionary<string, object>
             {
                 {"OrderId",order.Id }
             };
             await Shell.Current.GoToAsync(nameof(FeedbackPage),parameters);
+        }
+
+        [RelayCommand]
+        public async Task PayOrder(Order order)
+        {
+            IDictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                {"Order",order }
+            };
+            await Shell.Current.GoToAsync(nameof(ChoosePaymentMethodPage),parameters);
         }
     }
 }

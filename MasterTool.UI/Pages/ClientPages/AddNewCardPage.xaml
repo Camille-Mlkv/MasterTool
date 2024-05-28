@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterTool.UI.Pages.ClientPages.AddNewCardPage"
+             Title="AddNewCardPage">
+    
+    <StackLayout Padding="20">
+        <Label Text="Card Number" />
+        <Entry Text="{Binding CardNumber}" Placeholder="Enter card number" TextChanged="OnNumberChanged" />
+
+        <Label Text="Expiration Date" />
+        <DatePicker Date="{Binding ExpirationDate}" MinimumDate="{Binding MinimumExpirationDate}"/>
+
+        <Label Text="CVC" />
+        <Entry Text="{Binding Cvc}" Placeholder="Enter CVC" TextChanged="OnCvcChanged"/>
+
+        <Button Text="Save Card" Command="{Binding SaveCardCommand}" />
+    </StackLayout>
+</ContentPage>

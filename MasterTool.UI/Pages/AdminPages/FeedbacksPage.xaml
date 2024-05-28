@@ -29,11 +29,11 @@
                         <Label Text="{Binding ClientName}" FontAttributes="Bold" />
                         <StackLayout Orientation="Horizontal" Spacing="2">
                             <!-- Star Rating -->
-                            <Image Source="star_rating.png" HeightRequest="50" WidthRequest="50" IsVisible="{Binding Rate, Converter={StaticResource RatingToStarVisibilityConverter}, ConverterParameter=1}" />
-                            <Image Source="star_rating.png" HeightRequest="50" WidthRequest="50" IsVisible="{Binding Rate, Converter={StaticResource RatingToStarVisibilityConverter}, ConverterParameter=2}" />
-                            <Image Source="star_rating.png" HeightRequest="50" WidthRequest="50" IsVisible="{Binding Rate, Converter={StaticResource RatingToStarVisibilityConverter}, ConverterParameter=3}" />
-                            <Image Source="star_rating.png" HeightRequest="50" WidthRequest="50" IsVisible="{Binding Rate, Converter={StaticResource RatingToStarVisibilityConverter}, ConverterParameter=4}" />
-                            <Image Source="star_rating.png" HeightRequest="50" WidthRequest="50" IsVisible="{Binding Rate, Converter={StaticResource RatingToStarVisibilityConverter}, ConverterParameter=5}" />
+                            <Image Source="dotnet_bot.png" HeightRequest="50" WidthRequest="50" IsVisible="{Binding Rate, Converter={StaticResource RatingToStarVisibilityConverter}, ConverterParameter=1}" />
+                            <Image Source="dotnet_bot.png" HeightRequest="50" WidthRequest="50" IsVisible="{Binding Rate, Converter={StaticResource RatingToStarVisibilityConverter}, ConverterParameter=2}" />
+                            <Image Source="dotnet_bot.png" HeightRequest="50" WidthRequest="50" IsVisible="{Binding Rate, Converter={StaticResource RatingToStarVisibilityConverter}, ConverterParameter=3}" />
+                            <Image Source="dotnet_bot.png" HeightRequest="50" WidthRequest="50" IsVisible="{Binding Rate, Converter={StaticResource RatingToStarVisibilityConverter}, ConverterParameter=4}" />
+                            <Image Source="dotnet_bot.png" HeightRequest="50" WidthRequest="50" IsVisible="{Binding Rate, Converter={StaticResource RatingToStarVisibilityConverter}, ConverterParameter=5}" />
                         </StackLayout>
                         <Label Text="{Binding Text}" />
                     </StackLayout>

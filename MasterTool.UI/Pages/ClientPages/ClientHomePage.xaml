@@ -27,12 +27,18 @@
         <MenuBarItem Text="Мои заказы">
             <MenuFlyoutItem Text="Готовые" Command="{Binding CheckReadyOrdersCommand}"/>
             <MenuFlyoutItem Text="В процессе" Command="{Binding CheckNotReadyOrdersCommand}"/>
+            <MenuFlyoutItem Text="Нужно забрать" Command="{Binding CheckNotTakenOrdersCommand}"/>
         </MenuBarItem>
 
         <MenuBarItem Text="Мои заявки">
             <MenuFlyoutItem Text="На рассмотрении" Command="{Binding CheckNotApprovedRequestsCommand}"/>
             <MenuFlyoutItem Text="Открытые заявки" Command="{Binding CheckOpenRequestsCommand}"/>
             <MenuFlyoutItem Text="Оформить заявку" Command="{Binding MakeRequestCommand}"/>
+        </MenuBarItem>
+
+        <MenuBarItem Text="Способы оплаты">
+            <MenuFlyoutItem Text="Добавить карту" Command="{Binding AddNewCardCommand}"/>
+            <MenuFlyoutItem Text="Мои карты" Command="{Binding CheckAllCardsCommand}"/>
         </MenuBarItem>
 
     </ContentPage.MenuBarItems>

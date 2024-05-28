@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:converter="clr-namespace:MasterTool.UI.Converters"
              xmlns:models="clr-namespace:MasterTool.UI.ViewModels.ClientViewModels"
              x:Class="MasterTool.UI.Pages.ClientPages.ClientReadyOrdersPage"
              Title="ClientReadyOrdersPage">
@@ -13,6 +14,13 @@
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanConverter x:Key="BooleanConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
 
     <ScrollView>
         <StackLayout>
@@ -26,7 +34,8 @@
                             <Label Text="{Binding Price}" />
                             <Label Text="Date" FontAttributes="Bold" />
                             <Label Text="{Binding Date}" />
-                            <Button Text="Оплатить"/>
+                            <Button Text="Оплатить" Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientReadyOrdersPageViewModel}},Path=PayOrderCommand}" CommandParameter="{Binding}" 
+                                    IsVisible="{Binding IsPaid, Converter={StaticResource BooleanConverter}}"/>
                             <Button Text="Оставить отзыв" Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientReadyOrdersPageViewModel}},Path=LeaveFeedbackCommand}" CommandParameter="{Binding}" />
                         </StackLayout>
                     </DataTemplate>

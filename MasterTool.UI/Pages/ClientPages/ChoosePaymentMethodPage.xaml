@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MasterTool.UI.Pages.ClientPages.ChoosePaymentMethodPage"
+             Title="ChoosePaymentMethodPage">
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding LoadOrderDetailsCommand }"/>
+    </ContentPage.Behaviors>
+    
+    <StackLayout Padding="20">
+        <Label Text="Ваш заказ:"/>
+
+        <Frame BorderColor="Gray" Padding="10" Margin="0,10">
+            <StackLayout>
+                <Label Text="{Binding Request.Service}" 
+                       FontSize="Medium" />
+                <Label Text="{Binding Request.ItemType}" 
+                       FontSize="Medium" />
+                <Label Text="{Binding Request.Problem}" 
+                       FontSize="Medium" />
+                <Label Text="{Binding Request.Manufacturer}" 
+                       FontSize="Medium" />
+                <Label Text="{Binding Request.UsageTime}" 
+                       FontSize="Medium" />
+                <Label Text="{Binding Order.Price}" 
+                        FontSize="Medium" />
+            </StackLayout>
+        </Frame>
+
+        <Button Text="Продолжить"
+                Command="{Binding ProceedCommand}"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+    
+</ContentPage>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:cardviews="clr-namespace:MasterTool.UI.Pages.ClientPages"
+             xmlns:models="clr-namespace:MasterTool.UI.ViewModels.ClientViewModels"
+             x:Class="MasterTool.UI.Pages.ClientPages.PayByCardPage"
+             Title="PayByCardPage">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding LoadCardsCommand}"/>
+    </ContentPage.Behaviors>
+    
+    <ScrollView>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding ClientCards}" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal" />
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="LightGreen" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <StackLayout>
+                                <cardviews:CardView CardNumber="{Binding CardNumber}"
+                                                ExpirationDate="{Binding ExpiryDate}"
+                                                CardValidationCode="{Binding CvCode}" />
+                            </StackLayout>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label Text="Сумма заказа: " />
+            <Label Text="{Binding Order.Price}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            <Button Text="Оплатить" Command="{Binding PayOrderCommand}" VerticalOptions="EndAndExpand" />
+
+            <StackLayout x:Name="aiLayout" IsVisible="{Binding IsLoading}"  Margin="0" Padding="0" AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Gray" Opacity="0.5" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" >
+                <ActivityIndicator x:Name="ai" IsRunning="{Binding IsLoading}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Color="Black"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

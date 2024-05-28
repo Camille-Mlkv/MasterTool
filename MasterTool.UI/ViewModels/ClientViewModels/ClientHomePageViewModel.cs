@@ -106,5 +106,17 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
         {
             await Shell.Current.GoToAsync(nameof(ClientReadyOrdersPage));
         }
+
+        [RelayCommand]
+        public async Task AddNewCard()
+        {
+            await Shell.Current.GoToAsync(nameof(AddNewCardPage));
+        }
+
+        [RelayCommand]
+        public async Task CheckAllCards()
+        {
+            await Shell.Current.GoToAsync(nameof(CardsPage));
+        }
     }
 }
