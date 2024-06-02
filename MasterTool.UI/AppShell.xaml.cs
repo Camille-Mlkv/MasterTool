@@ -42,6 +42,7 @@ namespace MasterTool.UI
             Routing.RegisterRoute(nameof(StoragePage), typeof(StoragePage));
             Routing.RegisterRoute(nameof(AddNewDetailPage), typeof(AddNewDetailPage));
             Routing.RegisterRoute(nameof(FeedbacksPage), typeof(FeedbacksPage));
+            Routing.RegisterRoute(nameof(RejectRequestPage), typeof(RejectRequestPage));
         }
     }
 }

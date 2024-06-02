@@ -20,10 +20,11 @@ namespace MasterToolDomain.Entities
         public double Price { get; set; }
         public bool IsPaid { get; set; }
         public bool IsTaken { get; set; }
+        public bool IsRefusedByMaster { get; set; }
 
         public Order() { }
 
-        public Order(string date, int baseRequestId,int masterId,int clientId, bool isReady, double price,bool isPaid,bool isTaken)
+        public Order(string date, int baseRequestId,int masterId,int clientId, bool isReady, double price,bool isPaid,bool isTaken,bool isRefusedByMaster)
         {
             Date = date;
             MasterId = masterId;
@@ -33,6 +34,7 @@ namespace MasterToolDomain.Entities
             BaseRequestId = baseRequestId;
             IsPaid = isPaid;
             IsTaken = isTaken;
+            IsRefusedByMaster = isRefusedByMaster;
         }
     }
 }

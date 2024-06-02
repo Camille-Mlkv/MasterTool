@@ -29,6 +29,7 @@
                             <Label Text="{Binding Price}" />
                             <Label Text="Date" FontAttributes="Bold" />
                             <Label Text="{Binding Date}" />
+                            <Button Text="Отказаться" Command="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersInProcessMasterPageViewModel}}, Path=RejectOrderCommand}" CommandParameter="{Binding}" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

@@ -93,7 +93,8 @@ namespace MasterTool.UI
                     .AddTransient<CheckServicesPage>()
                     .AddTransient<CashBoxPage>()
                     .AddTransient<AddNewDetailPage>()
-                    .AddTransient<FeedbacksPage>();
+                    .AddTransient<FeedbacksPage>()
+                    .AddTransient<RejectRequestPage>();
             return services;
         }
 
@@ -105,7 +106,8 @@ namespace MasterTool.UI
                     .AddTransient<CheckServicesPageViewModel>()
                     .AddTransient<CashBoxPageViewModel>()
                     .AddTransient<AddNewDetailPageViewModel>()
-                    .AddTransient<FeedbacksPageViewModel>();
+                    .AddTransient<FeedbacksPageViewModel>()
+                    .AddTransient<RejectRequestPageViewModel>();
             return services;
         }
     }

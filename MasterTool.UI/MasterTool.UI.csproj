@@ -91,6 +91,9 @@
 	  <MauiXaml Update="Pages\AdminPages\FeedbacksPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\AdminPages\RejectRequestPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\AdminPages\RequestsToConfirmPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

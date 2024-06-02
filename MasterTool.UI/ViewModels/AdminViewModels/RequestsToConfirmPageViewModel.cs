@@ -19,7 +19,7 @@ namespace MasterTool.UI.ViewModels.AdminViewModels
         public async Task UpdateRequestsList() => await GetNotApprovedRequests();
         private async Task GetNotApprovedRequests()
         {
-            var requests = await _context.GetFileteredAsync<Request>(r => r.IsApproved == false && r.IsOrder == false);
+            var requests = await _context.GetFileteredAsync<Request>(r => r.IsApproved == false && r.IsOrder == false &&r.IsRejected==false);
             await MainThread.InvokeOnMainThreadAsync(() =>
             {
                 Requests.Clear();
@@ -41,6 +41,20 @@ namespace MasterTool.UI.ViewModels.AdminViewModels
             await UpdateRequestsList();
         }
 
-        //disapprove
+        [RelayCommand]
+        public async Task RejectRequest(Request request)
+        {
+            IDictionary<string,object> parameters= new Dictionary<string, object>
+            {
+                {"Request",request }
+            };
+            await Shell.Current.GoToAsync(nameof(RejectRequestPage),parameters);
+        }
+
+        [RelayCommand]
+        public async Task GoBack()
+        {
+            await Shell.Current.GoToAsync(nameof(AdminHomePage));
+        }
     }
 }

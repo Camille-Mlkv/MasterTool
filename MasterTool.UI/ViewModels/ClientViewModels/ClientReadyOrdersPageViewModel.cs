@@ -18,7 +18,7 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
         public async Task LoadReadyOrders() => await GetReadyOrders();
         private async Task GetReadyOrders()
         {
-            var orders = await _context.GetFileteredAsync<Order>(o => o.ClientId == CurrentUser.CurrentClient.Id && o.IsReady == true);
+            var orders = await _context.GetFileteredAsync<Order>(o => o.ClientId == CurrentUser.CurrentClient.Id && o.IsReady == true && o.IsRefusedByMaster==false);
             await MainThread.InvokeOnMainThreadAsync(() =>
             {
                 Orders.Clear();

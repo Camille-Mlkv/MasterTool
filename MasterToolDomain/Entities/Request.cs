@@ -19,9 +19,11 @@ namespace MasterToolDomain.Entities
         public int ClientId { get; set; }
         public bool IsApproved { get; set; }
         public bool IsOrder {  get; set; }
+        public bool IsRejected { get; set; }
+        public string? Comment { get; set; }
 
         public Request() { }
-        public Request(string service,string itemType,string problem, string usageTime,string manufacturer,int clientid,bool isApproved,bool isOrder)
+        public Request(string service,string itemType,string problem, string usageTime,string manufacturer,int clientid,bool isApproved,bool isOrder,bool isRejected,string comment)
         {
             Service = service;
             ItemType = itemType;
@@ -31,6 +33,8 @@ namespace MasterToolDomain.Entities
             ClientId = clientid;
             IsApproved = isApproved;
             IsOrder = isOrder;
+            IsRejected = isRejected;
+            Comment = comment;
         }
     }
 }

@@ -37,10 +37,23 @@ namespace MasterTool.UI.ViewModels.MasterViewModels
         {
             request.IsOrder = true;
             await _context.UpdateItemAsync<Request>(request);
-            string date = DateTime.Today.ToString();
-            Order newOrder = new Order(date, request.Id, CurrentUser.CurrentMaster.Id, request.ClientId, false, Service.Tarif,false,false);
-            await _context.AddItemAsync<Order>(newOrder);
-            await Shell.Current.DisplayAlert("Notify", "OK", "OK");
+
+            string date = DateTime.Today.ToString("dd-MM-yyyy");
+
+            var existingOrder = (await _context.GetFileteredAsync<Order>(o => o.BaseRequestId == request.Id)).FirstOrDefault();
+            if(existingOrder!=null)
+            {
+                existingOrder.MasterId = CurrentUser.CurrentMaster.Id;
+                existingOrder.IsRefusedByMaster = false;
+                await _context.UpdateItemAsync<Order>(existingOrder);
+            }
+            else
+            {
+                Order newOrder = new Order(date, request.Id, CurrentUser.CurrentMaster.Id, request.ClientId, false, Service.Tarif, false, false, false);
+                await _context.AddItemAsync<Order>(newOrder);
+            }
+
+            await Shell.Current.DisplayAlert("Notification", "Отклик завершился успешно!", "OK");
 
             var notification=new Notification($"Master {CurrentUser.CurrentMaster.Name} accepted your request #{request.Id}!",date,request.Id,request.ClientId);
             await _context.AddItemAsync<Notification>(notification);

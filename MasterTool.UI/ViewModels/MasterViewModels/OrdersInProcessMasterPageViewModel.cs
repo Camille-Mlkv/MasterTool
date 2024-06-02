@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MasterTool.UI.ViewModels.MasterViewModels
 {
@@ -17,7 +18,7 @@ namespace MasterTool.UI.ViewModels.MasterViewModels
         public async Task LoadOrders() => await GetNotReadyOrders();
         private async Task GetNotReadyOrders()
         {
-            var orders = await _context.GetFileteredAsync<Order>(o => o.MasterId == CurrentUser.CurrentMaster.Id && o.IsReady == false);
+            var orders = await _context.GetFileteredAsync<Order>(o => o.MasterId == CurrentUser.CurrentMaster.Id && o.IsReady == false && o.IsRefusedByMaster==false);
             await MainThread.InvokeOnMainThreadAsync(() =>
             {
                 Orders.Clear();
@@ -43,6 +44,22 @@ namespace MasterTool.UI.ViewModels.MasterViewModels
             };
 
             await Shell.Current.GoToAsync(nameof(OrderDetailsMasterPage),parameters);
+        }
+
+        [RelayCommand]
+        public async Task RejectOrder(Order order)
+        {
+            order.IsRefusedByMaster = true;
+            await _context.UpdateItemAsync<Order>(order);
+
+            int requestId = order.BaseRequestId;
+            var request=await _context.GetItemByKeyAsync<Request>(requestId);
+            request.IsOrder = false;
+            await _context.UpdateItemAsync<Request>(request);
+
+            var date = DateTime.Today.ToString("dd-MM-yyyy");
+            var notification = new Notification($"Your order #{order.Id} has been cancelled due to technical issues, request is still available.", date, requestId, order.ClientId);
+            await _context.AddItemAsync<Notification>(notification);
         }
     }
 }

@@ -45,6 +45,7 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
             Request.ClientId = ClientId;
             Request.IsApproved = false;
             Request.IsOrder = false;
+            Request.IsRejected = false;
             await _context.AddItemAsync<Request>(Request);
             await Shell.Current.DisplayAlert("Notification", "Запрос успешно отправлен на подтверждение.", "OK");
 

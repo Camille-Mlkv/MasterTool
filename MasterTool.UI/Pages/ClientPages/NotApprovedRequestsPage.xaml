@@ -2,12 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:converter="clr-namespace:MasterTool.UI.Converters"
              x:Class="MasterTool.UI.Pages.ClientPages.NotApprovedRequestsPage"
              Title="NotApprovedRequestsPage">
     
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding UpdateRequestsListCommand }"/>
     </ContentPage.Behaviors>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanConverter x:Key="BooleanConverter"/>
+            <converter:NullToBooleanConverter x:Key="NullToBooleanConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
         <StackLayout>
@@ -25,6 +33,11 @@
                             <Label Text="{Binding UsageTime}" />
                             <Label Text="Manufacturer" FontAttributes="Bold" />
                             <Label Text="{Binding Manufacturer}" />
+                            <Label Text="Status" FontAttributes="Bold" />
+                            <Label Text="Отклонена"  TextColor="Red" IsVisible="{Binding IsRejected}"/>
+                            <Label Text="На рассмотрении"  TextColor="Green" IsVisible="{Binding IsRejected, Converter={StaticResource BooleanConverter}}"/>
+                            <Label Text="Комментарий:" FontAttributes="Bold" IsVisible="{Binding Comment, Converter={StaticResource NullToBooleanConverter}}" />
+                            <Label Text="{Binding Comment}" IsVisible="{Binding Comment, Converter={StaticResource NullToBooleanConverter}}" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

@@ -23,7 +23,7 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
         public async Task UpdateOrdersList() => await GetOrdersRequests();
         private async Task GetOrdersRequests()
         {
-            var orders = await _context.GetFileteredAsync<Order>(o => o.ClientId == ClientId && o.IsReady == false);
+            var orders = await _context.GetFileteredAsync<Order>(o => o.ClientId == ClientId && o.IsReady == false &&o.IsRefusedByMaster==false);
             await MainThread.InvokeOnMainThreadAsync(() =>
             {
                 Orders.Clear();
