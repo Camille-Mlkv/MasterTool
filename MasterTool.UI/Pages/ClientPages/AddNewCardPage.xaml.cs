@@ -59,4 +59,9 @@ public partial class AddNewCardPage : ContentPage
 
         entry.Text = text;
     }
+
+    private async void OnBackButtonClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(ClientHomePage));
+    }
 }

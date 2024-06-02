@@ -16,7 +16,7 @@
             </Frame.GestureRecognizers>
             <StackLayout>
                 <Label Text="Детали" FontAttributes="Bold" FontSize="Large" />
-                <Image Source="dotnet_bot.png"  WidthRequest="150" HeightRequest="150" HorizontalOptions="Start" />
+                <!--<Image Source="dotnet_bot.png"  WidthRequest="150" HeightRequest="150" HorizontalOptions="Start" />-->
             </StackLayout>
         </Frame>
 

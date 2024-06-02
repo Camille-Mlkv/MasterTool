@@ -3,38 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MasterTool.UI.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to MasterTool!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="SignUpBtn"
-                Text="Sign up"
-                Clicked="OnSignUpClicked"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="LogInBtn"
-                Text="Log in"
-                HorizontalOptions="Center"
-                Clicked="OnLogInClicked"/>
-
-
-        </VerticalStackLayout>
-    </ScrollView>
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
+            <Image Source="tools.png" HeightRequest="200" HorizontalOptions="Center" />
+            <Label Text="Welcome to MasterTool!" FontSize="32" HorizontalOptions="Center" Margin="0,20,0,0"/>
+            <Button x:Name="SignUpBtn" Text="Sign Up" Clicked="OnSignUpClicked" HorizontalOptions="FillAndExpand" Margin="0,20,0,0"/>
+            <Button x:Name="LogInBtn" Text="Log In" Clicked="OnLogInClicked" HorizontalOptions="FillAndExpand" Margin="0,10,0,0"/>
+        </StackLayout>
+    </ContentPage.Content>
 
 </ContentPage>

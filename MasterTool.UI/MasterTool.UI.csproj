@@ -52,6 +52,7 @@
 	  <None Remove="Resources\Fonts\FontAwesome6-Brands.otf" />
 	  <None Remove="Resources\Fonts\FontAwesome6-Regular.otf" />
 	  <None Remove="Resources\Images\star_rating.png" />
+	  <None Remove="Resources\Images\tools.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -62,6 +63,7 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Microsoft.JSInterop" Version="7.0.19" />
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Stripe.net" Version="44.10.0" />
 		<PackageReference Include="Syncfusion.Maui.Inputs" Version="25.2.4" />
 	</ItemGroup>
 
@@ -105,6 +107,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ClientPages\FeedbackPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ClientPages\OrdersToTakeBackPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ClientPages\PayByCardPage.xaml">

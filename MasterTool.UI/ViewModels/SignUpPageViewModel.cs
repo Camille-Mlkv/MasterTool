@@ -30,6 +30,36 @@ namespace MasterTool.UI.ViewModels
 
         private async Task PerformSignUpOperation()
         {
+            if(UserModel.Username==null || UserModel.Password== null || UserModel.Name==null || UserModel.Surname==null || UserModel.Email== null || UserModel.PhoneNumber == null)
+            {
+                await Shell.Current.DisplayAlert("Alert", "Вы не заполнили обязательные поля!", "OK");
+                return;
+            }
+
+            var clients = await _context.GetAllAsync<Client>();
+            var clientsPhones = clients.Select(c => c.PhoneNumber).ToList();
+            if (clientsPhones.Contains(UserModel.PhoneNumber))
+            {
+                await Shell.Current.DisplayAlert("Alert", "Этот номер уже зарегистрирован!", "OK");
+                return;
+            }
+
+            var masters = await _context.GetAllAsync<Master>();
+            var mastersPhones = masters.Select(c => c.PhoneNumber).ToList();
+            if (mastersPhones.Contains(UserModel.PhoneNumber))
+            {
+                await Shell.Current.DisplayAlert("Alert", "Этот номер уже зарегистрирован!", "OK");
+                return;
+            }
+
+            var admins = await _context.GetAllAsync<Master>();
+            var adminsPhones = admins.Select(c => c.PhoneNumber).ToList();
+            if (adminsPhones.Contains(UserModel.PhoneNumber))
+            {
+                await Shell.Current.DisplayAlert("Alert", "Этот номер уже зарегистрирован!", "OK");
+                return;
+            }
+
             User newUser = new User(UserModel.Username, UserModel.Password, UserModel.Name, UserModel.Surname, UserModel.Email, UserModel.PhoneNumber);
 
             if (UserType == "Client")

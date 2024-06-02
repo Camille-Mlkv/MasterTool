@@ -18,7 +18,7 @@
         <Label Text="{Binding Request.Service}" />
         <Label Text="{Binding Request.ItemType}" />
         <Label Text="{Binding Order.Id}" />
-        <Button x:Name="BackBtn" Text="Назад" Command="{Binding GoBackCommand}"/>
+        <Button x:Name="BackBtn" Text="Назад" Clicked="OnBackBtnClicked"/>
 
         <StackLayout>
             <CollectionView ItemsSource="{Binding OrderDetails}">

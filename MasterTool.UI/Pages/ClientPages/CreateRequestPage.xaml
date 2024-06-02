@@ -2,9 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MasterTool.UI.Pages.ClientPages.CreateRequestPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              Title="CreateRequestPage">
+    
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding LoadServicesCommand }"/>
+    </ContentPage.Behaviors>
+    
     <VerticalStackLayout>
-        <Entry Placeholder="Тип услуги" Text="{Binding Request.Service}" />
+        <Picker Title="Тип услуги" SelectedItem="{Binding Request.Service}" ItemsSource="{Binding Services}" />
         <Entry Placeholder="Тип товара" Text="{Binding Request.ItemType}"/>
         <Entry Placeholder="Проблема" Text="{Binding Request.Problem}"/>
         <Entry Placeholder="Время использования" Text="{Binding Request.UsageTime}"/>

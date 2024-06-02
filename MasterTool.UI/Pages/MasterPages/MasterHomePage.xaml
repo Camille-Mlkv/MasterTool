@@ -12,6 +12,7 @@
         <Label
         x:Name="GreetingLbl"
         Text=""
+            FontSize="30"
         VerticalOptions="Center" 
         HorizontalOptions="Center" />
     </VerticalStackLayout>

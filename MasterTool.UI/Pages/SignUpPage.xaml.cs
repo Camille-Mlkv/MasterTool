@@ -1,3 +1,6 @@
+using MasterTool.UI.Services;
+using System.Text.RegularExpressions;
+
 namespace MasterTool.UI.Pages;
 
 public partial class SignUpPage : ContentPage
@@ -37,20 +40,6 @@ public partial class SignUpPage : ContentPage
 
     }
 
-    private void OnUsernameChanged(object sender, EventArgs e)
-    {
-        if (viewModel.UsernameIsUnique(UsernameEntry.Text))
-        {
-            UsernameAvailabilityLabel.Text = "Ник свободен";
-            SignupBtn.IsEnabled = true;
-        }
-        else
-        {
-            UsernameAvailabilityLabel.Text = "Ник занят";
-            SignupBtn.IsEnabled= false;
-        }
-    }
-
     protected override void OnDisappearing()
     {
         base.OnDisappearing();
@@ -58,4 +47,87 @@ public partial class SignUpPage : ContentPage
         AdminRB.IsChecked = false;
 
     }
+
+    private void OnUsernameChanged(object sender, EventArgs e)
+    {
+        if (viewModel.UsernameIsUnique(UsernameEntry.Text))
+        {
+            UsernameAvailabilityLabel.Text = "Ник свободен";
+            SignupBtn.IsEnabled = true;
+            UsernameAvailabilityLabel.TextColor = Colors.Green;
+        }
+        else
+        {
+            UsernameAvailabilityLabel.Text = "Ник занят";
+            SignupBtn.IsEnabled= false;
+            UsernameAvailabilityLabel.TextColor = Colors.Red;
+        }
+    }
+
+    private void OnPasswordChanged(object sender, EventArgs e)
+    {
+        bool isPasswordOkay = CredentialsChecker.IsPasswordValid(PasswordEntry.Text);
+        if (!isPasswordOkay)
+        {
+            PasswordLabel.Text = "Пароль должен содержать не менее 8 символов, включая буквы и цифры.";
+            SignupBtn.IsEnabled = false;
+            PasswordLabel.TextColor = Colors.Red;
+        }
+        else
+        {
+            PasswordLabel.Text = "OK";
+            SignupBtn.IsEnabled = true;
+            PasswordLabel.TextColor = Colors.Green;
+        }
+    }
+
+    private void OnSecondPasswordChanged(object sender, EventArgs e)
+    {
+        if(SecondPasswordEntry.Text!=PasswordEntry.Text)
+        {
+            SecondPasswordLabel.Text = "Пароли не совпадают";
+            SignupBtn.IsEnabled = false;
+            SecondPasswordLabel.TextColor= Colors.Red;
+        }
+        else
+        {
+            SecondPasswordLabel.Text = "";
+            SignupBtn.IsEnabled = true;
+        }
+    }
+
+    private void OnPhoneNumberChanged(object sender, TextChangedEventArgs e)
+    {
+        bool isPhoneNumberValid = CredentialsChecker.IsPhoneNumberValid(e.NewTextValue);
+        if (!isPhoneNumberValid)
+        {
+            PhoneNumberLabel.Text = "Номер телефона должен быть в формате +375-XX-XXXXXXX.";
+            PhoneNumberLabel.TextColor = Colors.Red;
+            SignupBtn.IsEnabled = false;
+        }
+        else
+        {
+            PhoneNumberLabel.Text = "OK.";
+            PhoneNumberLabel.TextColor = Colors.Green;
+            SignupBtn.IsEnabled = true;
+        }
+    }
+
+    private void OnEmailChanged(object sender, TextChangedEventArgs e)
+    {
+        bool isEmailValid = CredentialsChecker.IsEmailValid(e.NewTextValue);
+        if (!isEmailValid)
+        {
+            EmailLabel.Text = "Email должен быть в формате example@gmail.com или example@mail.ru.";
+            EmailLabel.TextColor = Colors.Red;
+            SignupBtn.IsEnabled = false;
+        }
+        else
+        {
+            EmailLabel.Text = "OK.";
+            EmailLabel.TextColor = Colors.Green;
+            SignupBtn.IsEnabled = true;
+        }
+    }
+
 }

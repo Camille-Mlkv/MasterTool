@@ -40,5 +40,7 @@ namespace MasterTool.UI.ViewModels.AdminViewModels
             await Shell.Current.DisplayAlert("Notification", "Заявка успешно одобрена", "OK");
             await UpdateRequestsList();
         }
+
+        //disapprove
     }
 }

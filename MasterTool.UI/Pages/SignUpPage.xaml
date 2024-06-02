@@ -22,6 +22,7 @@
             <Label x:Name="UsernameAvailabilityLabel" 
                    Text="Пусто"
                    HorizontalOptions="Center"/>
+            
             <Entry
                 x:Name="PasswordEntry"
                 Placeholder = "Пароль" 
@@ -30,7 +31,25 @@
                 IsPassword="True"
                 MaxLength="25"
                 WidthRequest="250"
-                Text="{Binding UserModel.Password}"/>
+                Text="{Binding UserModel.Password}"
+                TextChanged="OnPasswordChanged"/>
+            <Label x:Name="PasswordLabel" 
+                   Text=""
+                   HorizontalOptions="Center"/>
+            
+            <Entry
+                x:Name="SecondPasswordEntry"
+                Placeholder = "Повторный пароль" 
+                FontFamily="Helvetica"
+                FontSize="17"
+                IsPassword="True"
+                MaxLength="25"
+                WidthRequest="250"
+                TextChanged="OnSecondPasswordChanged"/>
+            <Label x:Name="SecondPasswordLabel" 
+                   Text=""
+                   HorizontalOptions="Center"/>
+            
             <Entry
                 x:Name="NameEntry"
                 Placeholder="Имя"
@@ -47,14 +66,20 @@
                 MaxLength="25"
                 WidthRequest="250"
                 Text="{Binding UserModel.Surname}"/>
+            
             <Entry
                 x:Name="PhoneEntry"
-                Placeholder = "Phone number" 
+                Placeholder="Номер телефона (+375-XX-XXXXXXX)"
                 FontFamily="Helvetica"
                 FontSize="17"
                 MaxLength="25"
                 WidthRequest="250"
+                TextChanged="OnPhoneNumberChanged"
                 Text="{Binding UserModel.PhoneNumber}"/>
+            <Label x:Name="PhoneNumberLabel" 
+                 Text=""
+                 HorizontalOptions="Center"/>
+            
             <Entry
                 x:Name="EmailEntry"
                 Placeholder="Электронная почта"
@@ -62,7 +87,12 @@
                 FontSize="17"
                 MaxLength="25"
                 WidthRequest="250"
-                Text="{Binding UserModel.Email}"/>
+                Text="{Binding UserModel.Email}"
+                TextChanged="OnEmailChanged"/>
+            <Label x:Name="EmailLabel"
+                Text=""
+                HorizontalOptions="Center" />
+            
             <Entry
                 x:Name="KeyEntry"
                 Placeholder="Ключ"

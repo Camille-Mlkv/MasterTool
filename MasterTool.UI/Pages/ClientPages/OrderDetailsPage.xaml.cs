@@ -16,4 +16,8 @@ public partial class OrderDetailsPage : ContentPage
 	//{
 	//	await Shell.Current.GoToAsync(nameof(ClientHomePage));
 	//}
+	private async void OnBackBtnClicked(object sender, EventArgs e)
+	{
+        await Navigation.PopAsync();
+    }
 }

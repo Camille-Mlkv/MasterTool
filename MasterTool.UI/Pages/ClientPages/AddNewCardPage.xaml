@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MasterTool.UI.Pages.ClientPages.AddNewCardPage"
              Title="AddNewCardPage">
-    
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+
     <StackLayout Padding="20">
         <Label Text="Card Number" />
         <Entry Text="{Binding CardNumber}" Placeholder="Enter card number" TextChanged="OnNumberChanged" />
@@ -14,6 +18,7 @@
         <Label Text="CVC" />
         <Entry Text="{Binding Cvc}" Placeholder="Enter CVC" TextChanged="OnCvcChanged"/>
 
-        <Button Text="Save Card" Command="{Binding SaveCardCommand}" />
+        <Button Text="Сохранить карту" Command="{Binding SaveCardCommand}" />
+        <Button Text="Назад" Clicked="OnBackButtonClicked" />
     </StackLayout>
 </ContentPage>

@@ -12,6 +12,7 @@
         <Label
         x:Name="GreetingLbl"
         Text=""
+        FontSize="30"
         VerticalOptions="Center" 
         HorizontalOptions="Center" />
     </VerticalStackLayout>
@@ -42,6 +43,10 @@
 
         <MenuBarItem Text="Отзывы наших клиентов">
             <MenuFlyoutItem Text="Просмотреть" Command="{Binding CheckFeedbacksCommand}"/>
+        </MenuBarItem>
+
+        <MenuBarItem Text="Заказы">
+            <MenuFlyoutItem Text="Просмотреть" Command="{Binding CheckOrdersToTakeCommand}"/>
         </MenuBarItem>
 
     </ContentPage.MenuBarItems>

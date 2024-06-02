@@ -1,3 +1,5 @@
+using MasterToolPersistence.Services;
+
 namespace MasterTool.UI.Pages.ClientPages;
 
 public partial class PayByCardPage : ContentPage

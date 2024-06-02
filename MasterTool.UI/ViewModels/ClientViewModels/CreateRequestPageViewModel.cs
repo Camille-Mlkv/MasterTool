@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Collections.ObjectModel;
 
 namespace MasterTool.UI.ViewModels.ClientViewModels
 {
@@ -12,6 +13,8 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
         [ObservableProperty]
         private int _clientId;
 
+        public ObservableCollection<string> Services { get; set; } = new();
+
         private DatabaseContext _context;
 
         public CreateRequestPageViewModel(DatabaseContext context)
@@ -19,6 +22,20 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
             _context = context;
             Request=new Request();
         }
+
+
+        [RelayCommand]
+        public async Task LoadServices()
+        {
+            var services = await _context.GetAllAsync<Service>();
+            await MainThread.InvokeOnMainThreadAsync(() =>
+            {
+                Services.Clear();
+                foreach (var s in services)
+                    Services.Add(s.ServiceName);
+            });
+        }
+
 
         [RelayCommand]
         public async Task CreateRequest() => await SaveNewRequest();

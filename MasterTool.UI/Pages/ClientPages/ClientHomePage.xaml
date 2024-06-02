@@ -12,6 +12,7 @@
         <Label
             x:Name="GreetingLbl"
             Text=""
+            FontSize="30"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
@@ -27,7 +28,7 @@
         <MenuBarItem Text="Мои заказы">
             <MenuFlyoutItem Text="Готовые" Command="{Binding CheckReadyOrdersCommand}"/>
             <MenuFlyoutItem Text="В процессе" Command="{Binding CheckNotReadyOrdersCommand}"/>
-            <MenuFlyoutItem Text="Нужно забрать" Command="{Binding CheckNotTakenOrdersCommand}"/>
+            <MenuFlyoutItem Text="Нужно забрать" Command="{Binding CheckOrdersToTakeCommand}"/>
         </MenuBarItem>
 
         <MenuBarItem Text="Мои заявки">

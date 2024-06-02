@@ -25,6 +25,7 @@ namespace MasterTool.UI
             Routing.RegisterRoute(nameof(CardsPage), typeof(CardsPage));
             Routing.RegisterRoute(nameof(ChoosePaymentMethodPage), typeof(ChoosePaymentMethodPage));
             Routing.RegisterRoute(nameof(PayByCardPage), typeof(PayByCardPage));
+            Routing.RegisterRoute(nameof(OrdersToTakeBackPage), typeof(OrdersToTakeBackPage));
 
             Routing.RegisterRoute(nameof(MasterHomePage), typeof(MasterHomePage));
             Routing.RegisterRoute(nameof(ServicesPage), typeof(ServicesPage));

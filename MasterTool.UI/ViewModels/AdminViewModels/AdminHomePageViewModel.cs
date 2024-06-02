@@ -83,5 +83,11 @@ namespace MasterTool.UI.ViewModels
         {
             await Shell.Current.GoToAsync(nameof(FeedbacksPage));
         }
+
+        [RelayCommand]
+        public async Task CheckOrdersToTake()
+        {
+            await Shell.Current.GoToAsync(nameof(OrdersToTakeBackPage));
+        }
     }
 }

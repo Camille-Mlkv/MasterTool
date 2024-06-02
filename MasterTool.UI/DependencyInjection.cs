@@ -39,7 +39,8 @@ namespace MasterTool.UI
                     .AddTransient<AddNewCardPage>()
                     .AddTransient<CardsPage>()
                     .AddTransient<ChoosePaymentMethodPage>()
-                    .AddTransient<PayByCardPage>();
+                    .AddTransient<PayByCardPage>()
+                    .AddTransient<OrdersToTakeBackPage>();
             return services;
         }
 
@@ -57,7 +58,8 @@ namespace MasterTool.UI
                     .AddTransient<AddNewCardPageViewModel>()
                     .AddTransient<CardsPageViewModel>()
                     .AddTransient<ChoosePaymentMethodPageViewModel>()
-                    .AddTransient<PayByCardPageViewModel>();
+                    .AddTransient<PayByCardPageViewModel>()
+                    .AddTransient<OrdersToTakeBackPageViewModel>();
             return services;
         }
 

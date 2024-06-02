@@ -6,6 +6,10 @@
              x:Class="MasterTool.UI.Pages.ClientPages.CardsPage"
              Title="CardsPage">
     
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding LoadClientCardsCommand }"/>
     </ContentPage.Behaviors>
@@ -23,6 +27,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <Button Text="Назад" Clicked="OnBackButtonClicked" />
         </StackLayout>
     </ScrollView>
     

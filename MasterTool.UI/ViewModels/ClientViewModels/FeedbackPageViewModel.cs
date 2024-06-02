@@ -56,6 +56,7 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
             Feedback feedback = new Feedback(CurrentUser.CurrentClient.Name, Rate+1, FeedbackText,OrderId);
             await _context.AddItemAsync<Feedback>(feedback);
             await Shell.Current.DisplayAlert("Notification", "Отзыв отправлен,спасибо!", "Ок");
+            await Shell.Current.GoToAsync(nameof(ClientReadyOrdersPage));
         }
 
     }

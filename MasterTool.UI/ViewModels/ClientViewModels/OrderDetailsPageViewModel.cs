@@ -32,17 +32,17 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
         }
 
 
-        [RelayCommand]
-        public async Task GoBack() => await GoToOrdersPage();
-        private async Task GoToOrdersPage()
-        {
-            IDictionary<string, object> parameters = new Dictionary<string, object>()
-            {
-                { "ClientId", Order.ClientId }
-            };
+        //[RelayCommand]
+        //public async Task GoBack() => await GoToOrdersPage();
+        //private async Task GoToOrdersPage()
+        //{
+        //    IDictionary<string, object> parameters = new Dictionary<string, object>()
+        //    {
+        //        { "ClientId", Order.ClientId }
+        //    };
 
-            await Shell.Current.GoToAsync(nameof(OrdersInProcessPage), parameters);
-        }
+        //    await Shell.Current.GoToAsync(nameof(OrdersInProcessPage), parameters);
+        //}
 
         [RelayCommand]
         public async Task LoadOrderDetails()

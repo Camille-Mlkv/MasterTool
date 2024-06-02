@@ -34,15 +34,15 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
             await Shell.Current.GoToAsync(nameof(ClientHomePage));
         }
 
-        //Оставлять отзыв только полученному товару, то есть оплаченному
+        //Оставлять отзыв только полученному товару
         //Добавить заказу поле оплачен
 
         [RelayCommand]
         public async Task LeaveFeedback(Order order)
         {
-            if (!order.IsPaid)
+            if (!order.IsTaken)
             {
-                await Shell.Current.DisplayAlert("Notification", "Отзыв можно оставить к оплаченному заказу", "OK");
+                await Shell.Current.DisplayAlert("Notification", "Отзыв можно оставить к полученному заказу", "OK");
                 return;
             }
             IDictionary<string, object> parameters = new Dictionary<string, object>
@@ -60,6 +60,17 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
                 {"Order",order }
             };
             await Shell.Current.GoToAsync(nameof(ChoosePaymentMethodPage),parameters);
+        }
+
+        [RelayCommand]
+        public async Task ShowDetails(Order order)
+        {
+            IDictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                { "Order", order }
+            };
+
+            await Shell.Current.GoToAsync(nameof(OrderDetailsPage), parameters);
         }
     }
 }

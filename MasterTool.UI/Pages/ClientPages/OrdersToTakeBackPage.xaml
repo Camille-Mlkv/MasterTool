@@ -2,34 +2,33 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             xmlns:converter="clr-namespace:MasterTool.UI.Converters"
              xmlns:models="clr-namespace:MasterTool.UI.ViewModels.ClientViewModels"
-             x:Class="MasterTool.UI.Pages.ClientPages.ClientReadyOrdersPage"
-             Title="ClientReadyOrdersPage">
-    
-    <ContentPage.Behaviors>
-        <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding LoadReadyOrdersCommand }"/>
-    </ContentPage.Behaviors>
+             x:Class="MasterTool.UI.Pages.ClientPages.OrdersToTakeBackPage"
+             Title="OrdersToTakeBackPage">
     
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <converter:BooleanConverter x:Key="BooleanConverter"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded" Command="{Binding LoadOrdersCommand }"/>
+    </ContentPage.Behaviors>
 
     <ScrollView>
         <StackLayout>
+            <SearchBar x:Name="SearchingBar"
+                       Placeholder="Search by client phone number"
+                       Text="{Binding SearchQuery}"
+                       SearchCommand="{Binding SearchOrdersByClientDataCommand}"
+                       IsVisible="{Binding IsAdmin}"
+                       TextChanged="OnClearCLicked"/>
+            
             <CollectionView ItemsSource="{Binding Orders}" VerticalOptions="FillAndExpand">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="10" Margin="5" BackgroundColor="#EEEEEE">
                             <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientReadyOrdersPageViewModel}},Path=ShowDetailsCommand}" CommandParameter="{Binding}"/>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersToTakeBackPageViewModel}},Path=ShowDetailsCommand}" CommandParameter="{Binding}"/>
                             </StackLayout.GestureRecognizers>
                             <Label Text="Order #" FontAttributes="Bold" />
                             <Label Text="{Binding Id}" />
@@ -37,9 +36,8 @@
                             <Label Text="{Binding Price}" />
                             <Label Text="Date" FontAttributes="Bold" />
                             <Label Text="{Binding Date}" />
-                            <Button Text="Оплатить" Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientReadyOrdersPageViewModel}},Path=PayOrderCommand}" CommandParameter="{Binding}" 
-                                    IsVisible="{Binding IsPaid, Converter={StaticResource BooleanConverter}}"/>
-                            <Button Text="Оставить отзыв" Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientReadyOrdersPageViewModel}},Path=LeaveFeedbackCommand}" CommandParameter="{Binding}" />
+                            <Button Text="Выдать" IsVisible="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersToTakeBackPageViewModel}}, Path=IsAdmin}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersToTakeBackPageViewModel}},Path=GiveOrderCommand}" CommandParameter="{Binding}"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
