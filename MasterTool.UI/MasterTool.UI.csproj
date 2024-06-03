@@ -51,6 +51,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\FontAwesome6-Brands.otf" />
 	  <None Remove="Resources\Fonts\FontAwesome6-Regular.otf" />
+	  <None Remove="Resources\Images\placeholder.png" />
 	  <None Remove="Resources\Images\star_rating.png" />
 	  <None Remove="Resources\Images\tools.png" />
 	</ItemGroup>

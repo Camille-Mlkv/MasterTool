@@ -18,6 +18,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <converter:IntToColorConverter x:Key="IntToColorConverter"/>
+            <converter:IdToImageConverter x:Key="IdToImageConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -41,9 +42,7 @@
                                                   CommandParameter="{Binding}" />
                         </Frame.GestureRecognizers>
                         <StackLayout>
-                            <!--<Image Source="dotnet_bot.png"
-                                   HeightRequest="100" 
-                                   WidthRequest="100"/>-->
+                            <Image Source="{Binding Id, Converter={StaticResource IdToImageConverter}}" WidthRequest="150" HeightRequest="150"/>
                             <Label Text="{Binding Name}" 
                                    HorizontalOptions="Center" 
                                    VerticalOptions="Center" 

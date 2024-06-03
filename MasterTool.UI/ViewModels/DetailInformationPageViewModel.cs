@@ -159,5 +159,37 @@ namespace MasterTool.UI.ViewModels
             await _context.AddItemAsync<CashBoxNote>(note);
 
         }
+
+
+        public static string GetImagesFolderPath()
+        {
+            string appDataPath = FileSystem.AppDataDirectory;
+            string imagesFolderPath = Path.Combine(appDataPath, "Images");
+
+            if (!Directory.Exists(imagesFolderPath))
+            {
+                Directory.CreateDirectory(imagesFolderPath);
+            }
+
+            return imagesFolderPath;
+        }
+
+
+        [RelayCommand]
+        async Task SaveImage() => await SaveImageToImagesFolder();
+
+        private async Task SaveImageToImagesFolder()
+        {
+            string imagesFolderPath = GetImagesFolderPath();
+            var photo = await MediaPicker.PickPhotoAsync();
+
+            if (photo != null)
+            {
+                using var stream = await photo.OpenReadAsync();
+                string imagePath = Path.Combine(imagesFolderPath, $"{Detail.Id}.png");
+                using var fileStream = new FileStream(imagePath, FileMode.Create, FileAccess.Write);
+                await stream.CopyToAsync(fileStream);
+            }
+        }
     }
 }
