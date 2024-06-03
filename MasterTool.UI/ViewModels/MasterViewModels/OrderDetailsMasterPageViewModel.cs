@@ -41,9 +41,12 @@ namespace MasterTool.UI.ViewModels.MasterViewModels
         {
             Order.IsReady = true;
             await _context.UpdateItemAsync<Order>(Order);
-            string date = DateTime.Today.ToString();
-            var notification = new Notification($"Ваш заказ {Order.Id} готов",date,Order.BaseRequestId,Order.ClientId);
+
+            DateTime now = DateTime.Now;
+            string date = now.ToString("yyyy-MM-dd HH:mm");
+            var notification = new Notification($"Ваш заказ {Order.Id} готов",date,Order.BaseRequestId,Order.ClientId,true);
             await _context.AddItemAsync<Notification>(notification);
+
             await Shell.Current.DisplayAlert("Notification", "Уведомление отправлено клиенту", "OK");
         }
 

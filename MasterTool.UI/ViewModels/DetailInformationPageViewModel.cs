@@ -78,7 +78,7 @@ namespace MasterTool.UI.ViewModels
                 }
                 else
                 {
-                    await Shell.Current.DisplayAlert("Ошибка", "Пожалуйста, введите положительное число.", "OK");
+                    await Shell.Current.DisplayAlert("Ошибка", "Пожалуйста, введите корректные значения.", "OK");
                 }
             }
 
@@ -106,10 +106,13 @@ namespace MasterTool.UI.ViewModels
             CashBoxNote note = new CashBoxNote(false, $"Использование деталей типа {Detail.Name}", date, quantity * Detail.Price);
             await _context.AddItemAsync<CashBoxNote>(note);
 
-            //4. Обновить стоимость заказа
+            //4. Обновить стоимость заказа (если был отказ, то бесплатно доделываем)
             var order = await _context.GetItemByKeyAsync<Order>(OrderId);
-            order.Price += quantity * Detail.Price;
-            await _context.UpdateItemAsync<Order>(order);
+            if (!order.IsPaid)
+            {
+                order.Price += quantity * Detail.Price;
+                await _context.UpdateItemAsync<Order>(order);
+            }
 
             //5. Вернуться на страницу заказа.
             await Shell.Current.DisplayAlert("Notification", "Деталь добавлена к заказу", "OK");

@@ -62,5 +62,12 @@ namespace MasterTool.UI.ViewModels.MasterViewModels
         {
             await Shell.Current.GoToAsync(nameof(MasterReadyOrdersPage));
         }
+
+        [RelayCommand]
+        public async Task GetNotifications() => await GoToNotificationsPage();
+        private async Task GoToNotificationsPage()
+        {
+            await Shell.Current.GoToAsync(nameof(NotificationsPage));
+        }
     }
 }

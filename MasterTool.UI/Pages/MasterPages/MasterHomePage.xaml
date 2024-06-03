@@ -21,8 +21,8 @@
     <ContentPage.MenuBarItems>
 
         <MenuBarItem Text="Мой аккаунт">
-            <MenuFlyoutItem Text="Данные" 
-                Command="{Binding GetPersonalDataCommand}" />
+            <MenuFlyoutItem Text="Данные" Command="{Binding GetPersonalDataCommand}" />
+            <MenuFlyoutItem Text="Уведомления" Command="{Binding GetNotificationsCommand}" />
         </MenuBarItem>
 
         <MenuBarItem Text="Мои заказы">

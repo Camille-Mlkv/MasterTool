@@ -47,11 +47,11 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
             IEnumerable<Order> orders = null;
             if (!IsAdmin) //change check
             {
-                orders = await _context.GetFileteredAsync<Order>(o => o.ClientId == CurrentUser.CurrentClient.Id && o.IsPaid == true && o.IsTaken == false);
+                orders = await _context.GetFileteredAsync<Order>(o => o.ClientId == CurrentUser.CurrentClient.Id && o.IsPaid == true && o.IsTaken == false && o.IsReady==true);
             }
             else
             {
-                orders = await _context.GetFileteredAsync<Order>(o => o.IsPaid == true && o.IsTaken == false);
+                orders = await _context.GetFileteredAsync<Order>(o => o.IsPaid == true && o.IsTaken == false && o.IsReady==true);
             }
             
             await MainThread.InvokeOnMainThreadAsync(() =>
@@ -93,7 +93,31 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
         {
             order.IsTaken = true;
             await _context.UpdateItemAsync<Order>(order);
+
+            DateTime now = DateTime.Now;
+            string date = now.ToString("yyyy-MM-dd HH:mm");
+            var notification = new Notification($"Клиент принял заказ {order.Id}", date, order.Id, order.MasterId,false);
+            await _context.AddItemAsync<Notification>(notification);
+
             await Shell.Current.DisplayAlert("Notification", "Успешно!", "OK");
+        }
+
+
+        [RelayCommand]
+        public async Task RefuseOrder(Order order)
+        {
+            order.IsReady = false;
+            order.Price = 0;
+            await _context.UpdateItemAsync<Order>(order);
+
+            string refusingReason = await Shell.Current.DisplayPromptAsync("Введите причину отказа", "Проблема:", maxLength: 100);
+
+            DateTime now = DateTime.Now;
+            string date = now.ToString("yyyy-MM-dd HH:mm");
+            var notification = new Notification($"Клиент отказался от заказа {order.Id},причина: "+ refusingReason, date, order.Id, order.MasterId,false);
+            await _context.AddItemAsync<Notification>(notification);
+
+            await Shell.Current.DisplayAlert("Notification", "Заказ отмечен как невыполненный.", "OK");
         }
 
         //поиск

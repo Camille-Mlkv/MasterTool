@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MasterToolDomain.Entities;
 using System.Collections.ObjectModel;
 
 namespace MasterTool.UI.ViewModels.ClientViewModels
@@ -18,7 +19,22 @@ namespace MasterTool.UI.ViewModels.ClientViewModels
         public async Task LoadNotifications() => await GetClientNotifications();
         private async Task GetClientNotifications()
         {
-            var notifications = await _context.GetFileteredAsync<Notification>(n=>n.ClientId==CurrentUser.CurrentClient.Id);
+            IEnumerable<Notification> notifications;
+            if (CurrentUser.CurrentClient != null)
+            {
+                if (CurrentUser.CurrentClient.Id != 0)
+                {
+                    notifications = await _context.GetFileteredAsync<Notification>(n => n.ReceiverId == CurrentUser.CurrentClient.Id && n.IsForClient==true);
+                }
+                else
+                {
+                    notifications = await _context.GetFileteredAsync<Notification>(n => n.ReceiverId == CurrentUser.CurrentMaster.Id && n.IsForClient == false);
+                }
+            }
+            else
+            {
+                notifications = await _context.GetFileteredAsync<Notification>(n => n.ReceiverId == CurrentUser.CurrentMaster.Id && n.IsForClient == false);
+            }
             await MainThread.InvokeOnMainThreadAsync(() =>
             {
                 Notifications.Clear();

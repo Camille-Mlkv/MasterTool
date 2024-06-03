@@ -57,8 +57,9 @@ namespace MasterTool.UI.ViewModels.MasterViewModels
             request.IsOrder = false;
             await _context.UpdateItemAsync<Request>(request);
 
-            var date = DateTime.Today.ToString("dd-MM-yyyy");
-            var notification = new Notification($"Your order #{order.Id} has been cancelled due to technical issues, request is still available.", date, requestId, order.ClientId);
+            DateTime now = DateTime.Now;
+            string date = now.ToString("yyyy-MM-dd HH:mm");
+            var notification = new Notification($"Your order #{order.Id} has been cancelled due to technical issues, request is still available.", date, requestId, order.ClientId,true);
             await _context.AddItemAsync<Notification>(notification);
         }
     }

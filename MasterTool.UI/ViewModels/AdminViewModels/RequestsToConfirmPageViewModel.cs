@@ -35,8 +35,12 @@ namespace MasterTool.UI.ViewModels.AdminViewModels
         {
             request.IsApproved = true;
             await _context.UpdateItemAsync<Request>(request);
-            var note = new Notification($"Ваша заявка {request.Id} успешно одобрена",DateTime.Today.ToString(),request.Id,request.ClientId) ;
+
+            DateTime now = DateTime.Now;
+            string date = now.ToString("yyyy-MM-dd HH:mm");
+            var note = new Notification($"Ваша заявка {request.Id} успешно одобрена",date,request.Id,request.ClientId,true) ;
             await _context.AddItemAsync<Notification>(note);
+
             await Shell.Current.DisplayAlert("Notification", "Заявка успешно одобрена", "OK");
             await UpdateRequestsList();
         }

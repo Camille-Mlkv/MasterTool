@@ -14,15 +14,17 @@ namespace MasterToolDomain.Entities
         public string? Message { get; set; }
         public string? Date { get; set; }
         public int RequestId { get; set; }
-        public int ClientId { get; set; }
+        public int ReceiverId { get; set; }
+        public bool IsForClient { get; set; }
 
         public Notification() { }
-        public Notification(string message,string date, int requestId,int clientId) 
+        public Notification(string message,string date, int requestId,int clientId,bool isForClient) 
         {
             Message = message;
             Date = date;
             RequestId = requestId;
-            ClientId = clientId;
+            ReceiverId = clientId;
+            IsForClient = isForClient;
         }
     }
 }
