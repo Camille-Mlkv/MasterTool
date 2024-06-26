@@ -5,14 +5,14 @@
              Title="SignUpPage">
     <VerticalStackLayout>
         <Label 
-        Text="Регистрация"
+        Text="Authorization"
         VerticalOptions="Start" 
         HorizontalOptions="Center"
         FontSize="20"/>
         <VerticalStackLayout Spacing="10">
             <Entry
                 x:Name="UsernameEntry"
-                Placeholder = "Имя пользователя" 
+                Placeholder = "Username" 
                 FontFamily="Helvetica"
                 FontSize="17"
                 MaxLength="25"
@@ -25,7 +25,7 @@
             
             <Entry
                 x:Name="PasswordEntry"
-                Placeholder = "Пароль" 
+                Placeholder = "Password" 
                 FontFamily="Helvetica"
                 FontSize="17"
                 IsPassword="True"
@@ -39,7 +39,7 @@
             
             <Entry
                 x:Name="SecondPasswordEntry"
-                Placeholder = "Повторный пароль" 
+                Placeholder = "Repeat password" 
                 FontFamily="Helvetica"
                 FontSize="17"
                 IsPassword="True"
@@ -52,7 +52,7 @@
             
             <Entry
                 x:Name="NameEntry"
-                Placeholder="Имя"
+                Placeholder="Name"
                 FontFamily="Helvetica"
                 FontSize="17"
                 MaxLength="25"
@@ -60,7 +60,7 @@
                 Text="{Binding UserModel.Name}"/>
             <Entry
                 x:Name="SurnameEntry"
-                Placeholder = "Фамилия" 
+                Placeholder = "Surname" 
                 FontFamily="Helvetica"
                 FontSize="17"
                 MaxLength="25"
@@ -69,7 +69,7 @@
             
             <Entry
                 x:Name="PhoneEntry"
-                Placeholder="Номер телефона (+375-XX-XXXXXXX)"
+                Placeholder="Phone number (+375-XX-XXXXXXX)"
                 FontFamily="Helvetica"
                 FontSize="17"
                 MaxLength="25"
@@ -82,7 +82,7 @@
             
             <Entry
                 x:Name="EmailEntry"
-                Placeholder="Электронная почта"
+                Placeholder="Email adress"
                 FontFamily="Helvetica"
                 FontSize="17"
                 MaxLength="25"
@@ -95,7 +95,7 @@
             
             <Entry
                 x:Name="KeyEntry"
-                Placeholder="Ключ"
+                Placeholder="Secret key"
                 FontFamily="Helvetica"
                 FontSize="17"
                 MaxLength="25"
@@ -107,22 +107,22 @@
         <VerticalStackLayout HorizontalOptions="Center">
             <RadioButton
                 x:Name="AdminRB"
-                Content="Зарегистрироваться как админ"
+                Content="Sign up as admin"
                 CheckedChanged="OnRBChecked"/>
             <RadioButton
                 x:Name="MasterRB"
-                Content="Зарегистрироваться как мастер"
+                Content="Sign up as master"
                 CheckedChanged="OnRBChecked"/>
         </VerticalStackLayout>
 
         <HorizontalStackLayout HorizontalOptions="Center">
             <Button
                 x:Name="SignupBtn"
-                Text="Зарегистрироваться"
+                Text="Sign up"
                 Command="{Binding SignUpCommand}"/>
             <Button
                 x:Name="QuitBtn"
-                Text="Вернуться"
+                Text="Back"
                 Clicked="OnBack"/>
 
         </HorizontalStackLayout>

@@ -23,18 +23,27 @@
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersInProcessMasterPageViewModel}},Path=ShowDetailsCommand}" CommandParameter="{Binding}"/>
                             </StackLayout.GestureRecognizers>
-                            <Label Text="Order #" FontAttributes="Bold" />
-                            <Label Text="{Binding Id}" />
-                            <Label Text="Price" FontAttributes="Bold" />
-                            <Label Text="{Binding Price}" />
-                            <Label Text="Date" FontAttributes="Bold" />
-                            <Label Text="{Binding Date}" />
-                            <Button Text="Отказаться" Command="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersInProcessMasterPageViewModel}}, Path=RejectOrderCommand}" CommandParameter="{Binding}" />
+                            <HorizontalStackLayout>
+                                <Label Text="Order #" FontAttributes="Bold" />
+                                <Label Text="{Binding Id}" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout>
+                                <Label Text="Price: " FontAttributes="Bold" />
+                                <Label Text="{Binding Price}" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout>
+                                <Label Text="Date: " FontAttributes="Bold" />
+                                <Label Text="{Binding Date}" />
+                            </HorizontalStackLayout>
+                            
+                            <Button Text="Refuse" Command="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersInProcessMasterPageViewModel}}, Path=RejectOrderCommand}" CommandParameter="{Binding}" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button x:Name="BackBtn" Text="Назад" Command="{Binding GoBackCommand}"/>
+            <Button x:Name="BackBtn" Text="Back" Command="{Binding GoBackCommand}"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -10,7 +10,7 @@
     </ContentPage.Behaviors>
     
     <StackLayout Padding="20">
-        <Label Text="Ваш заказ:"/>
+        <Label Text="Your order:" FontSize="20"/>
 
         <Frame BorderColor="Gray" Padding="10" Margin="0,10">
             <StackLayout>

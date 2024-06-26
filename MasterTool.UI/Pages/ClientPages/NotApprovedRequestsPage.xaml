@@ -34,9 +34,9 @@
                             <Label Text="Manufacturer" FontAttributes="Bold" />
                             <Label Text="{Binding Manufacturer}" />
                             <Label Text="Status" FontAttributes="Bold" />
-                            <Label Text="Отклонена"  TextColor="Red" IsVisible="{Binding IsRejected}"/>
-                            <Label Text="На рассмотрении"  TextColor="Green" IsVisible="{Binding IsRejected, Converter={StaticResource BooleanConverter}}"/>
-                            <Label Text="Комментарий:" FontAttributes="Bold" IsVisible="{Binding Comment, Converter={StaticResource NullToBooleanConverter}}" />
+                            <Label Text="Declined"  TextColor="Red" IsVisible="{Binding IsRejected}"/>
+                            <Label Text="Under consideration"  TextColor="Green" IsVisible="{Binding IsRejected, Converter={StaticResource BooleanConverter}}"/>
+                            <Label Text="Comment:" FontAttributes="Bold" IsVisible="{Binding Comment, Converter={StaticResource NullToBooleanConverter}}" />
                             <Label Text="{Binding Comment}" IsVisible="{Binding Comment, Converter={StaticResource NullToBooleanConverter}}" />
                         </StackLayout>
                     </DataTemplate>

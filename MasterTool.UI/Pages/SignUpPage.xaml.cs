@@ -52,13 +52,13 @@ public partial class SignUpPage : ContentPage
     {
         if (viewModel.UsernameIsUnique(UsernameEntry.Text))
         {
-            UsernameAvailabilityLabel.Text = "Ник свободен";
+            UsernameAvailabilityLabel.Text = "Username is free.";
             SignupBtn.IsEnabled = true;
             UsernameAvailabilityLabel.TextColor = Colors.Green;
         }
         else
         {
-            UsernameAvailabilityLabel.Text = "Ник занят";
+            UsernameAvailabilityLabel.Text = "Username is taken.";
             SignupBtn.IsEnabled= false;
             UsernameAvailabilityLabel.TextColor = Colors.Red;
         }
@@ -69,13 +69,13 @@ public partial class SignUpPage : ContentPage
         bool isPasswordOkay = CredentialsChecker.IsPasswordValid(PasswordEntry.Text);
         if (!isPasswordOkay)
         {
-            PasswordLabel.Text = "Пароль должен содержать не менее 8 символов, включая буквы и цифры.";
+            PasswordLabel.Text = "Password must contain at least 8 symbols, including digits and letters.";
             SignupBtn.IsEnabled = false;
             PasswordLabel.TextColor = Colors.Red;
         }
         else
         {
-            PasswordLabel.Text = "OK";
+            PasswordLabel.Text = "Great password!";
             SignupBtn.IsEnabled = true;
             PasswordLabel.TextColor = Colors.Green;
         }
@@ -85,7 +85,7 @@ public partial class SignUpPage : ContentPage
     {
         if(SecondPasswordEntry.Text!=PasswordEntry.Text)
         {
-            SecondPasswordLabel.Text = "Пароли не совпадают";
+            SecondPasswordLabel.Text = "Passwords must match!";
             SignupBtn.IsEnabled = false;
             SecondPasswordLabel.TextColor= Colors.Red;
         }
@@ -101,7 +101,7 @@ public partial class SignUpPage : ContentPage
         bool isPhoneNumberValid = CredentialsChecker.IsPhoneNumberValid(e.NewTextValue);
         if (!isPhoneNumberValid)
         {
-            PhoneNumberLabel.Text = "Номер телефона должен быть в формате +375-XX-XXXXXXX.";
+            PhoneNumberLabel.Text = "Phone number must be formatted as follows: +375-XX-XXXXXXX.";
             PhoneNumberLabel.TextColor = Colors.Red;
             SignupBtn.IsEnabled = false;
         }
@@ -118,7 +118,7 @@ public partial class SignUpPage : ContentPage
         bool isEmailValid = CredentialsChecker.IsEmailValid(e.NewTextValue);
         if (!isEmailValid)
         {
-            EmailLabel.Text = "Email должен быть в формате example@gmail.com или example@mail.ru.";
+            EmailLabel.Text = "Email must be formatted as follows: example@gmail.com or example@mail.ru.";
             EmailLabel.TextColor = Colors.Red;
             SignupBtn.IsEnabled = false;
         }

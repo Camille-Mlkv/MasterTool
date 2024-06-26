@@ -29,7 +29,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button x:Name="BackBtn" Text="Назад" Command="{Binding GoBackCommand}"/>
+            <Button x:Name="BackBtn" Text="Back" Command="{Binding GoBackCommand}"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

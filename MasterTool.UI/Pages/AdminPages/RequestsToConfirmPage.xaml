@@ -30,13 +30,13 @@
                             <Label Text="{Binding UsageTime}" />
                             <Label Text="Manufacturer" FontAttributes="Bold" />
                             <Label Text="{Binding Manufacturer}" />
-                            <Button Text="Одобрить" Command="{Binding Source={RelativeSource AncestorType={x:Type models:RequestsToConfirmPageViewModel}},Path=ApproveRequestCommand}" CommandParameter="{Binding}"/>
-                            <Button Text="Отказать" Command="{Binding Source={RelativeSource AncestorType={x:Type models:RequestsToConfirmPageViewModel}},Path=RejectRequestCommand}" CommandParameter="{Binding}"/>
+                            <Button Text="Approve" Command="{Binding Source={RelativeSource AncestorType={x:Type models:RequestsToConfirmPageViewModel}},Path=ApproveRequestCommand}" CommandParameter="{Binding}"/>
+                            <Button Text="Reject" Command="{Binding Source={RelativeSource AncestorType={x:Type models:RequestsToConfirmPageViewModel}},Path=RejectRequestCommand}" CommandParameter="{Binding}"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Text="Назад" Command="{Binding GoBackCommand}"/>
+            <Button Text="Back" Command="{Binding GoBackCommand}"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

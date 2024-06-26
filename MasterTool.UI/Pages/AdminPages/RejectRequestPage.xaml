@@ -21,16 +21,16 @@
 
         <!-- Comment Section -->
         <StackLayout>
-            <Label Text="Введите комментарий:" FontAttributes="Bold" />
+            <Label Text="Enter comment:" FontAttributes="Bold" />
             <Editor Text="{Binding Comment}" HeightRequest="100" IsReadOnly="{Binding IsWithoutComment}"/>
             <StackLayout Orientation="Horizontal" VerticalOptions="Center">
                 <CheckBox IsChecked="{Binding IsWithoutComment}" />
-                <Label Text="Без комментария" VerticalOptions="Center" />
+                <Label Text="Without a comment" VerticalOptions="Center" />
             </StackLayout>
         </StackLayout>
 
         <!-- Reject Button -->
-        <Button Text="Отказать" Command="{Binding RejectCommand}" />
+        <Button Text="Refuse" Command="{Binding RejectCommand}" />
     </StackLayout>
 
 </ContentPage>

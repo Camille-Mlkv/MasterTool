@@ -20,38 +20,38 @@
 
     <ContentPage.MenuBarItems>
 
-        <MenuBarItem Text="Мой аккаунт">
-            <MenuFlyoutItem Text="Данные" Command="{Binding GetPersonalDataCommand}" />
+        <MenuBarItem Text="My account">
+            <MenuFlyoutItem Text="Personal data" Command="{Binding GetPersonalDataCommand}" />
         </MenuBarItem>
 
-        <MenuBarItem Text="Сервисы">
-            <MenuFlyoutItem Text="Добавить сервис" Command="{Binding AddNewServiceCommand}"/>
-            <MenuFlyoutItem Text="Просмотреть сервисы" Command="{Binding CheckServicesCommand}"/>
+        <MenuBarItem Text="Services">
+            <MenuFlyoutItem Text="Add new service" Command="{Binding AddNewServiceCommand}"/>
+            <MenuFlyoutItem Text="Check services" Command="{Binding CheckServicesCommand}"/>
         </MenuBarItem>
 
-        <MenuBarItem Text="Заявки">
-            <MenuFlyoutItem Text="Неодобренные заявки" Command="{Binding CheckOpenRequestsCommand}" />
+        <MenuBarItem Text="Requests">
+            <MenuFlyoutItem Text="Requests to approve" Command="{Binding CheckOpenRequestsCommand}" />
         </MenuBarItem>
 
-        <MenuBarItem Text="Касса">
-            <MenuFlyoutItem Text="Просмотреть кассу" Command="{Binding CheckCashBoxCommand}"/>
+        <MenuBarItem Text="Cash box">
+            <MenuFlyoutItem Text="Check" Command="{Binding CheckCashBoxCommand}"/>
         </MenuBarItem>
 
-        <MenuBarItem Text="Склад">
-            <MenuFlyoutItem Text="Просмотреть склад" Command="{Binding CheckStorageCommand}"/>
+        <MenuBarItem Text="Storage">
+            <MenuFlyoutItem Text="Check storage" Command="{Binding CheckStorageCommand}"/>
         </MenuBarItem>
 
-        <MenuBarItem Text="Отзывы наших клиентов">
-            <MenuFlyoutItem Text="Просмотреть" Command="{Binding CheckFeedbacksCommand}"/>
+        <MenuBarItem Text="Clients' feedbacks">
+            <MenuFlyoutItem Text="See" Command="{Binding CheckFeedbacksCommand}"/>
         </MenuBarItem>
 
-        <MenuBarItem Text="Заказы">
-            <MenuFlyoutItem Text="Просмотреть" Command="{Binding CheckOrdersToTakeCommand}"/>
+        <MenuBarItem Text="Ready orders">
+            <MenuFlyoutItem Text="Check list" Command="{Binding CheckOrdersToTakeCommand}"/>
         </MenuBarItem>
 
     </ContentPage.MenuBarItems>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Выйти" Order="Secondary" Command="{Binding LogOutCommand}"/>
+        <ToolbarItem Text="Log out" Order="Secondary" Command="{Binding LogOutCommand}"/>
     </ContentPage.ToolbarItems>
 </ContentPage>

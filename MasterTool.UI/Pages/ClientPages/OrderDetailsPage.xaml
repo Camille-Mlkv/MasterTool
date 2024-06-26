@@ -15,10 +15,16 @@
     </ContentPage.Behaviors>
 
     <VerticalStackLayout>
+        <Label Text="Service:" FontAttributes="Bold" />
         <Label Text="{Binding Request.Service}" />
+
+        <Label Text="Item Type:" FontAttributes="Bold" />
         <Label Text="{Binding Request.ItemType}" />
+
+        <Label Text="Order ID:" FontAttributes="Bold" />
         <Label Text="{Binding Order.Id}" />
-        <Button x:Name="BackBtn" Text="Назад" Clicked="OnBackBtnClicked"/>
+
+        <Button x:Name="BackBtn" Text="Back" Clicked="OnBackBtnClicked"/>
 
         <StackLayout>
             <CollectionView ItemsSource="{Binding OrderDetails}">

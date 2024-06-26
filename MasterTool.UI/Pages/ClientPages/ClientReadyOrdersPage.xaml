@@ -37,9 +37,9 @@
                             <Label Text="{Binding Price}" />
                             <Label Text="Date" FontAttributes="Bold" />
                             <Label Text="{Binding Date}" />
-                            <Button Text="Оплатить" Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientReadyOrdersPageViewModel}},Path=PayOrderCommand}" CommandParameter="{Binding}" 
+                            <Button Text="Pay" Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientReadyOrdersPageViewModel}},Path=PayOrderCommand}" CommandParameter="{Binding}" 
                                     IsVisible="{Binding IsPaid, Converter={StaticResource BooleanConverter}}"/>
-                            <Button Text="Оставить отзыв" Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientReadyOrdersPageViewModel}},Path=LeaveFeedbackCommand}" CommandParameter="{Binding}" />
+                            <Button Text="Leave feedback" Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientReadyOrdersPageViewModel}},Path=LeaveFeedbackCommand}" CommandParameter="{Binding}" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

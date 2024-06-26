@@ -16,8 +16,6 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="10" Margin="5" BackgroundColor="#EEEEEE">
-                            <!--<Label Text="Service" FontAttributes="Bold" />
-                            <Label Text="{Binding Service}" />-->
                             <Label Text="ItemType" FontAttributes="Bold" />
                             <Label Text="{Binding ItemType}" />
                             <Label Text="Problem" FontAttributes="Bold" />
@@ -26,7 +24,7 @@
                             <Label Text="{Binding UsageTime}" />
                             <Label Text="Manufacturer" FontAttributes="Bold" />
                             <Label Text="{Binding Manufacturer}" />
-                            <Button Text="Откликнуться" Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientsRequestsPageViewModel}},Path=AcceptRequestCommand}" CommandParameter="{Binding}" />
+                            <Button Text="Accept" Command="{Binding Source={RelativeSource AncestorType={x:Type models:ClientsRequestsPageViewModel}},Path=AcceptRequestCommand}" CommandParameter="{Binding}" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

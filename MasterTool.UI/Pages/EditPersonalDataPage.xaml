@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MasterTool.UI.Pages.EditPersonalDataPage"
-             Title="EditPersonalDataPage">
+             Title="PersonalDataPage">
     <VerticalStackLayout>
         <Label 
-            Text="{Binding User.Name}"
+            Text="{Binding User.Username}"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            FontSize="20"/>
         <Entry
             x:Name="NameEntry"
             Placeholder="{Binding User.Name}"
@@ -25,6 +26,7 @@
             WidthRequest="250"
             Text="{Binding User.Surname}"/>
         <Entry
+            IsReadOnly="True"
             x:Name="PhoneEntry"
             Placeholder = "{Binding User.PhoneNumber}" 
             FontFamily="Helvetica"
@@ -33,6 +35,7 @@
             WidthRequest="250"
             Text="{Binding User.PhoneNumber}"/>
         <Entry
+            IsReadOnly="True"
             x:Name="EmailEntry"
             Placeholder="{Binding User.Email}"
             FontFamily="Helvetica"
@@ -40,8 +43,27 @@
             MaxLength="25"
             WidthRequest="250"
             Text="{Binding User.Email}"/>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="1">
+            <Entry
+                IsReadOnly="True"
+                x:Name="PasswordEntry"
+                Placeholder="{Binding User.Password}"
+                FontFamily="Helvetica"
+                FontSize="17"
+                MaxLength="25"
+                WidthRequest="208"
+                Text="{Binding User.Password}"
+                IsPassword="True"
+                />
+            <CheckBox
+                x:Name="ShowPasswordCheckBox"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                IsChecked="{Binding IsPasswordHidden, Mode=TwoWay}"
+                CheckedChanged="OnShowPasswordCheckBoxChanged"/>
+        </StackLayout>
         <Button
-            Text="Save and leave"
+            Text="Back"
             Command="{Binding SaveAndLeaveCommand}"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -27,7 +27,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Text="Назад" Clicked="OnBackButtonClicked" />
+            <Button Text="Back" Clicked="OnBackButtonClicked" />
         </StackLayout>
     </ScrollView>
     

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MasterTool.UI.Pages.MasterPages.MasterHomePage"
-             Title="MasterHomePage">
+             Title="">
 
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
@@ -10,33 +10,33 @@
 
     <VerticalStackLayout>
         <Label
-        x:Name="GreetingLbl"
-        Text=""
+            x:Name="GreetingLbl"
+            Text=""
             FontSize="30"
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" />
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
     </VerticalStackLayout>
 
 
     <ContentPage.MenuBarItems>
 
-        <MenuBarItem Text="Мой аккаунт">
-            <MenuFlyoutItem Text="Данные" Command="{Binding GetPersonalDataCommand}" />
-            <MenuFlyoutItem Text="Уведомления" Command="{Binding GetNotificationsCommand}" />
+        <MenuBarItem Text="My account">
+            <MenuFlyoutItem Text="Personal data" Command="{Binding GetPersonalDataCommand}" />
+            <MenuFlyoutItem Text="Notifications" Command="{Binding GetNotificationsCommand}" />
         </MenuBarItem>
 
-        <MenuBarItem Text="Мои заказы">
-            <MenuFlyoutItem Text="Выполненные" Command="{Binding LoadReadyOrdersCommand}"/>
-            <MenuFlyoutItem Text="В процессе" Command="{Binding LoadOrdersInProcessCommand}"/>
+        <MenuBarItem Text="My orders">
+            <MenuFlyoutItem Text="Done" Command="{Binding LoadReadyOrdersCommand}"/>
+            <MenuFlyoutItem Text="In process" Command="{Binding LoadOrdersInProcessCommand}"/>
         </MenuBarItem>
 
-        <MenuBarItem Text="Заявки клиентов">
-            <MenuFlyoutItem Text="Просмотреть" Command="{Binding CheckClientsRequestsCommand}"/>
+        <MenuBarItem Text="Clients' requests">
+            <MenuFlyoutItem Text="Check" Command="{Binding CheckClientsRequestsCommand}"/>
         </MenuBarItem>
 
     </ContentPage.MenuBarItems>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Выйти" Order="Secondary" Command="{Binding LogOutCommand}"/>
+        <ToolbarItem Text="Log out" Order="Secondary" Command="{Binding LogOutCommand}"/>
     </ContentPage.ToolbarItems>
 </ContentPage>

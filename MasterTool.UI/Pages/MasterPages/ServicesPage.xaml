@@ -39,7 +39,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
         
-        <Button Text="Go back"
+        <Button Text="Back"
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand"
                 Command="{Binding GoBackCommand}"/>

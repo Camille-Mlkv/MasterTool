@@ -16,17 +16,17 @@
     <ScrollView>
         <StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <RadioButton GroupName="FilterGroup" Content="Приход" Value="Income" IsChecked="{Binding OnlyIncome}">
+                <RadioButton GroupName="FilterGroup" Content="Income" Value="Income" IsChecked="{Binding OnlyIncome}">
                     <RadioButton.Behaviors>
                         <toolkit:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding FilterNotesCommand}" />
                     </RadioButton.Behaviors>
                 </RadioButton>
-                <RadioButton GroupName="FilterGroup" Content="Расход" Value="Waste" IsChecked="{Binding OnlyExpense}">
+                <RadioButton GroupName="FilterGroup" Content="Expenses" Value="Waste" IsChecked="{Binding OnlyExpense}">
                     <RadioButton.Behaviors>
                         <toolkit:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding FilterNotesCommand}" />
                     </RadioButton.Behaviors>
                 </RadioButton>
-                <RadioButton GroupName="FilterGroup" Content="Все" Value="All">
+                <RadioButton GroupName="FilterGroup" Content="All" Value="All">
                     <RadioButton.Behaviors>
                         <toolkit:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding FilterNotesCommand}" />
                     </RadioButton.Behaviors>
@@ -37,18 +37,18 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="10" Margin="5" BackgroundColor="#EEEEEE">
-                            <Label Text="Дата" FontAttributes="Bold" />
+                            <Label Text="Date" FontAttributes="Bold" />
                             <Label Text="{Binding Date}" />
-                            <Label Text="Инфо" FontAttributes="Bold" />
+                            <Label Text="Info" FontAttributes="Bold" />
                             <Label Text="{Binding Info}" />
-                            <Label Text="Сумма" FontAttributes="Bold" />
+                            <Label Text="Sum" FontAttributes="Bold" />
                             <Label Text="{Binding Sum}" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <!--<Button Text="Добавить новый сервис" Command="{Binding AddNewServiceCommand}"/>-->
-            <Button Text="Назад" Command="{Binding GoBackCommand}"/>
+            <Button Text="Back" Command="{Binding GoBackCommand}"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

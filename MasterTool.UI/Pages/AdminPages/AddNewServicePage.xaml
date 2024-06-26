@@ -4,8 +4,8 @@
              x:Class="MasterTool.UI.Pages.AdminPages.AddNewServicePage"
              Title="AddNewServicePage">
     <VerticalStackLayout>
-        <Entry Placeholder="Тип услуги" Text="{Binding Service.ServiceName}" />
-        <Entry Placeholder="Тариф" Text="{Binding Service.Tarif}"/>
-        <Button Text="Отправить" Command="{Binding CreateServiceCommand}"/>
+        <Entry Placeholder="Service's type" Text="{Binding Service.ServiceName}" />
+        <Entry Placeholder="Tarif" Text="{Binding Service.Tarif}"/>
+        <Button Text="Send" Command="{Binding CreateServiceCommand}"/>
     </VerticalStackLayout>
 </ContentPage>

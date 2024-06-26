@@ -9,11 +9,11 @@
     </Shell.BackButtonBehavior>
     
     <VerticalStackLayout>
-        <Entry Placeholder="Наименование детали" Text="{Binding Detail.Name}" />
-        <Entry Placeholder="Производитель" Text="{Binding Detail.Manufacturer}"/>
-        <Entry Placeholder="Стоимость" Text="{Binding Detail.Price}" />
-        <Entry Placeholder="Количество" Text="{Binding Detail.Amount}"/>
-        <Button Text="Отправить" Command="{Binding CreateDetailCommand}"/>
+        <Entry Placeholder="Detail's name" Text="{Binding Detail.Name}" />
+        <Entry Placeholder="Manufacturer" Text="{Binding Detail.Manufacturer}"/>
+        <Entry Placeholder="Price" Text="{Binding Detail.Price}" />
+        <Entry Placeholder="Amount" Text="{Binding Detail.Amount}"/>
+        <Button Text="Send" Command="{Binding CreateDetailCommand}"/>
         <Button Text="Back" Command="{Binding GoBackCommand}"/>
     </VerticalStackLayout>
 </ContentPage>

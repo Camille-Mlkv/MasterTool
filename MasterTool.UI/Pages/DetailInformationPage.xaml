@@ -22,28 +22,28 @@
         </StackLayout>
         
         <StackLayout Orientation="Horizontal" Spacing="5" Padding="5">
-            <Label Text="Деталь: " FontAttributes="Bold" FontSize="16" TextColor="DarkBlue"/>
+            <Label Text="Detail: " FontAttributes="Bold" FontSize="16" TextColor="DarkBlue"/>
             <Label Text="{Binding Detail.Name}" FontSize="16" TextColor="DarkSlateGray"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Spacing="5" Padding="5">
-            <Label Text="Производитель: " FontAttributes="Bold" FontSize="16" TextColor="DarkBlue"/>
+            <Label Text="Manufacturer: " FontAttributes="Bold" FontSize="16" TextColor="DarkBlue"/>
             <Label Text="{Binding Detail.Manufacturer}" FontSize="16" TextColor="DarkSlateGray"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Spacing="5" Padding="5">
-            <Label Text="Количество деталей: " FontAttributes="Bold" FontSize="16" TextColor="DarkBlue"/>
+            <Label Text="Detail's amount: " FontAttributes="Bold" FontSize="16" TextColor="DarkBlue"/>
             <Label Text="{Binding Detail.Amount}" FontSize="16" TextColor="DarkSlateGray"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Spacing="5" Padding="5">
-            <Label Text="Стоимость за деталь: " FontAttributes="Bold" FontSize="16" TextColor="DarkBlue"/>
+            <Label Text="Price per detail: " FontAttributes="Bold" FontSize="16" TextColor="DarkBlue"/>
             <Label Text="{Binding Detail.Price}" FontSize="16" TextColor="DarkSlateGray"/>
         </StackLayout>
 
-        <Button Text="Добавить деталь к заказу"  IsVisible="{Binding IsMaster}" Command="{Binding AddDetailCommand}"/>
-        <Button Text="Редактировать деталь"  IsVisible="{Binding IsAdmin}" Command="{Binding EditDetailAmountCommand}"/>
-        <Button Text="Добавить фото"  IsVisible="{Binding IsAdmin}" Command="{Binding SaveImageCommand}"/>
+        <Button Text="Add detail to order"  IsVisible="{Binding IsMaster}" Command="{Binding AddDetailCommand}"/>
+        <Button Text="Edit detail"  IsVisible="{Binding IsAdmin}" Command="{Binding EditDetailAmountCommand}"/>
+        <Button Text="Add detail's photo"  IsVisible="{Binding IsAdmin}" Command="{Binding SaveImageCommand}"/>
         <Button Text="Back" Command="{Binding GoBackCommand}"/>
     </VerticalStackLayout>
 </ContentPage>

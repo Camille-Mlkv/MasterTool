@@ -10,14 +10,14 @@
     
     <VerticalStackLayout Spacing="25">
         <Label 
-            Text="Вход"
+            Text="Authentication"
             VerticalOptions="Start" 
             HorizontalOptions="Center"
             FontSize="20"/>
         <VerticalStackLayout Spacing="20">
             <Entry
                 x:Name="UsernameEntry"
-                Placeholder = "Имя пользователя" 
+                Placeholder = "Username" 
                 FontFamily="Helvetica"
                 FontSize="17"
                 MaxLength="25"
@@ -25,7 +25,7 @@
                 Text="{Binding EnteredUser.Username}"/>
             <Entry
                 x:Name="PasswordEntry"
-                Placeholder = "Пароль" 
+                Placeholder = "Password" 
                 FontFamily="Helvetica"
                 FontSize="17"
                 IsPassword="True"
@@ -37,11 +37,11 @@
         <HorizontalStackLayout HorizontalOptions="Center">
             <Button
                 x:Name="LoginBtn"
-                Text="Войти"
+                Text="Log in"
                 Command="{Binding LogInCommand}"/>
             <Button
                 x:Name="QuitBtn"
-                Text="Вернуться"
+                Text="Back"
                 Clicked="OnBack"/>
 
         </HorizontalStackLayout>

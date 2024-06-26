@@ -18,7 +18,7 @@
         <Label Text="CVC" />
         <Entry Text="{Binding Cvc}" Placeholder="Enter CVC" TextChanged="OnCvcChanged"/>
 
-        <Button Text="Сохранить карту" Command="{Binding SaveCardCommand}" />
-        <Button Text="Назад" Clicked="OnBackButtonClicked" />
+        <Button Text="Save card" Command="{Binding SaveCardCommand}" />
+        <Button Text="Back" Clicked="OnBackButtonClicked" />
     </StackLayout>
 </ContentPage>

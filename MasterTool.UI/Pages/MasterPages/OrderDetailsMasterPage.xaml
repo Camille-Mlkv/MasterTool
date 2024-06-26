@@ -16,12 +16,17 @@
 
 
     <VerticalStackLayout>
+        <Label Text="Service:" FontAttributes="Bold" />
         <Label Text="{Binding Request.Service}" />
+
+        <Label Text="Item Type:" FontAttributes="Bold" />
         <Label Text="{Binding Request.ItemType}" />
+
+        <Label Text="Order ID:" FontAttributes="Bold" />
         <Label Text="{Binding Order.Id}" />
-        <Button x:Name="BackBtn" Text="Назад" Command="{Binding GoBackCommand}"/>
-        <Button Text="Заказ готов" Command="{Binding FinishOrderCommand}"/>
-        <Button Text="Добавить детали со склада" Command="{Binding GoToStorageCommand}"/>
+        <Button x:Name="BackBtn" Text="Back" Command="{Binding GoBackCommand}"/>
+        <Button Text="Complete order" Command="{Binding FinishOrderCommand}"/>
+        <Button Text="Add details from storage" Command="{Binding GoToStorageCommand}"/>
 
         <StackLayout>
             <CollectionView ItemsSource="{Binding OrderDetails}">

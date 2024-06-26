@@ -19,16 +19,16 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="10" Margin="5" BackgroundColor="#EEEEEE">
-                            <Label Text="Сервис" FontAttributes="Bold" />
+                            <Label Text="Service" FontAttributes="Bold" />
                             <Label Text="{Binding ServiceName}" />
-                            <Label Text="Тариф" FontAttributes="Bold" />
+                            <Label Text="Tarif" FontAttributes="Bold" />
                             <Label Text="{Binding Tarif}" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Text="Добавить новый сервис" Command="{Binding AddNewServiceCommand}"/>
-            <Button Text="Назад" Command="{Binding GoBackCommand}"/>
+            <Button Text="Add new service" Command="{Binding AddNewServiceCommand}"/>
+            <Button Text="Back" Command="{Binding GoBackCommand}"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

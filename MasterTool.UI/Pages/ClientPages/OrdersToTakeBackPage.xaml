@@ -36,15 +36,15 @@
                             <Label Text="{Binding Price}" />
                             <Label Text="Date" FontAttributes="Bold" />
                             <Label Text="{Binding Date}" />
-                            <Button Text="Выдать" IsVisible="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersToTakeBackPageViewModel}}, Path=IsAdmin}"
+                            <Button Text="Give back" IsVisible="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersToTakeBackPageViewModel}}, Path=IsAdmin}"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersToTakeBackPageViewModel}},Path=GiveOrderCommand}" CommandParameter="{Binding}"/>
-                            <Button Text="Отказ" IsVisible="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersToTakeBackPageViewModel}}, Path=IsAdmin}"
+                            <Button Text="Refuse" IsVisible="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersToTakeBackPageViewModel}}, Path=IsAdmin}"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type models:OrdersToTakeBackPageViewModel}},Path=RefuseOrderCommand}" CommandParameter="{Binding}"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button x:Name="BackBtn" Text="Назад" Command="{Binding GoBackCommand}"/>
+            <Button x:Name="BackBtn" Text="Back" Command="{Binding GoBackCommand}"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

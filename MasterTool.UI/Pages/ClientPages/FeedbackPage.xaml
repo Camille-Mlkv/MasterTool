@@ -19,12 +19,13 @@
 
     <VerticalStackLayout>
         <Label 
-            Text="Вы уже оставили отзыв."
+            Text="You have already left your feedback."
             VerticalOptions="Center" 
             HorizontalOptions="Center"
+            FontSize="19"
             IsVisible="{Binding HasFeedback}"/>
 
-        <Entry Placeholder="Оставьте пожелание или предложение" Text="{Binding FeedbackText}" IsReadOnly="{Binding HasFeedback}"/>
+        <Entry Placeholder="Leave your feedback here" Text="{Binding FeedbackText}" IsReadOnly="{Binding HasFeedback}"/>
 
         <control:SfRating x:Name="myrate"
                 ItemCount="5" ItemSize="40" ItemSpacing="15" Value="{Binding Rate}"
@@ -35,7 +36,7 @@
                 </control:RatingSettings>
             </control:SfRating.RatingSettings>
         </control:SfRating>
-        <Button Text="Оставить отзыв" Command="{Binding LeaveFeedbackCommand}" IsVisible="{Binding HasFeedback, Converter={StaticResource BooleanConverter}}"/>
+        <Button Text="Send" Command="{Binding LeaveFeedbackCommand}" IsVisible="{Binding HasFeedback, Converter={StaticResource BooleanConverter}}"/>
         
     </VerticalStackLayout>
 </ContentPage>

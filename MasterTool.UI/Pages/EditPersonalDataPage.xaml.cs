@@ -27,4 +27,9 @@ public partial class EditPersonalDataPage : ContentPage
             await Shell.Current.GoToAsync(nameof(AdminHomePage));
         }
     }
+
+    private void OnShowPasswordCheckBoxChanged(object sender, CheckedChangedEventArgs e)
+    {
+        PasswordEntry.IsPassword = !e.Value;
+    }
 }

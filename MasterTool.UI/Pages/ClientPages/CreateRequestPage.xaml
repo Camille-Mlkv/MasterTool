@@ -10,11 +10,11 @@
     </ContentPage.Behaviors>
     
     <VerticalStackLayout>
-        <Picker Title="Тип услуги" SelectedItem="{Binding Request.Service}" ItemsSource="{Binding Services}" />
-        <Entry Placeholder="Тип товара" Text="{Binding Request.ItemType}"/>
-        <Entry Placeholder="Проблема" Text="{Binding Request.Problem}"/>
-        <Entry Placeholder="Время использования" Text="{Binding Request.UsageTime}"/>
-        <Entry Placeholder="Производитель" Text="{Binding Request.Manufacturer}"/>
-        <Button Text="Отправить" Command="{Binding CreateRequestCommand}"/>
+        <Picker Title="Service" SelectedItem="{Binding Request.Service}" ItemsSource="{Binding Services}" />
+        <Entry Placeholder="Item type" Text="{Binding Request.ItemType}"/>
+        <Entry Placeholder="Problem" Text="{Binding Request.Problem}"/>
+        <Entry Placeholder="Usage time" Text="{Binding Request.UsageTime}"/>
+        <Entry Placeholder="Manufacturer" Text="{Binding Request.Manufacturer}"/>
+        <Button Text="Send" Command="{Binding CreateRequestCommand}"/>
     </VerticalStackLayout>
 </ContentPage>

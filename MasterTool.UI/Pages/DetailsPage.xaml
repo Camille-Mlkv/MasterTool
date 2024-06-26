@@ -23,7 +23,7 @@
     </ContentPage.Resources>
 
     <StackLayout>
-        <Button Text="Добавить деталь"
+        <Button Text="Add a detail"
                 Command="{Binding AddDetailCommand}"
                 IsVisible="{Binding IsAdmin}" />
 

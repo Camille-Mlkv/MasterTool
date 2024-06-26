@@ -36,10 +36,10 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Label Text="Сумма заказа: " />
+            <Label Text="Order's price: " />
             <Label Text="{Binding Order.Price}" VerticalOptions="Center" HorizontalOptions="Center" />
 
-            <Button Text="Оплатить" Command="{Binding PayOrderCommand}" VerticalOptions="EndAndExpand" />
+            <Button Text="Pay" Command="{Binding PayOrderCommand}" VerticalOptions="EndAndExpand" />
 
             <StackLayout x:Name="aiLayout" IsVisible="{Binding IsLoading}"  Margin="0" Padding="0" AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Gray" Opacity="0.5" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" >
                 <ActivityIndicator x:Name="ai" IsRunning="{Binding IsLoading}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Color="Black"/>

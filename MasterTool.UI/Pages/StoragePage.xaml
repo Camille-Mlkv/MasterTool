@@ -15,20 +15,10 @@
                 <TapGestureRecognizer Command="{Binding ViewDetailsCommand}" />
             </Frame.GestureRecognizers>
             <StackLayout>
-                <Label Text="Детали" FontAttributes="Bold" FontSize="Large" />
-                <!--<Image Source="dotnet_bot.png"  WidthRequest="150" HeightRequest="150" HorizontalOptions="Start" />-->
+                <Label Text="Details" FontAttributes="Bold" FontSize="Large" />
+                <Image Source="tools.png"  WidthRequest="150" HeightRequest="150" HorizontalOptions="Start" />
             </StackLayout>
         </Frame>
-
-        <!--<Frame BackgroundColor="LightGray" Padding="10" CornerRadius="10" Margin="0,20,0,0">
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding ViewMaterialsCommand}" />
-            </Frame.GestureRecognizers>
-            <StackLayout>
-                <Label Text="Материалы" FontAttributes="Bold" FontSize="Large" />
-                <Image Source="dotnet_bot.png"  WidthRequest="150" HeightRequest="150" HorizontalOptions="Start" />
-            </StackLayout>
-        </Frame>-->
         <Button Text="Back" Command="{Binding GoBackCommand}"/>
     </StackLayout>
 </ContentPage>
